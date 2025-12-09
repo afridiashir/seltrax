@@ -27,11 +27,11 @@ model Store {
   id          String           @id @default(uuid())
   ownerId     String
   name        String
-  description String?
+  category    String?
   logoUrl     String?
   siteIcon    String?
   mainDomain  String?
-  currency    String           @default("PKR")
+  currency    String           @default("Rs")
   createdAt   DateTime         @default(now())
   users       UserStoreRole[]  // Relation to users via roles
 }
@@ -40,10 +40,16 @@ model UserStoreRole {
   id      String @id @default(uuid())
   userId  String
   storeId String
-  role    String
+  role    Role 
 
   user  User  @relation(fields: [userId], references: [id])
   store Store @relation(fields: [storeId], references: [id])
 
   @@unique([userId, storeId]) // a user can have only one role per store
+}
+
+enum Role {
+  OWNER
+  ADMIN
+  STAFF
 }

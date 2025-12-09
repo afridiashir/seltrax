@@ -1,0 +1,27 @@
+{
+  "name": "@repo/zod-schemas",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc -b"
+  },
+
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "nodemon": "^3.1.11",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "zod": "^4.1.13"
+  }
+}

@@ -1,27 +1,19 @@
 import express, { Request, Response } from 'express';
-import { prisma } from './db/prisma-client';
+import authRoutes from "./modules/auth/auth.route";
+import userRoutes from "./modules/users/users.routes";
+import storeRoutes from "./modules/stores/stores.route";
 
 const app = express();
-const port = process.env.PORT || 5000;
-const userCreate =  async (req:Request, res:Response) => {
+const port = process.env.PORT || 5001;
+app.use(express.json());
 
-  const user = await prisma.user.create({
-    data: {
-      name: 'John Doe',
-      email: 'john1@gmail.com',
-      password: 'securepassword',
+app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
+app.use('/stores',storeRoutes);
 
-    },
-  });
-  console.log('User created:', user);
-  res.send(user);
-}
 
-app.get('/', userCreate);
 
-app.get('/health', (req, res) => {
-  res.send('OK');
-});
+app.get("/", (req, res) => res.send("API Running223"));
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
