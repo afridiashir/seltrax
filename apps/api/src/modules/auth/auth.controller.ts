@@ -25,7 +25,7 @@ export const register = async (req: Request, res: Response) => {
       data: { name, email, password: hashed },
     }, );
 
-    return res.json({ message: "User created", user });
+    return res.json({ message: "User Registered Successfully" });
   } catch (err) {
     return res.status(500).json({ message: err });
   }
@@ -47,9 +47,9 @@ export const login = async (req: Request, res: Response) => {
     if (!match) return res.status(400).json({ message: "Invalid email or password" });
 
     const token = jwt.sign(
-      { userId: user.id,
+      { id: user.id,
         email: user.email,
-        name: user.name
+        role: user.name
        },
       process.env.JWT_SECRET!,
       { expiresIn: "7d" }

@@ -13,34 +13,35 @@ datasource db {
   provider = "postgresql"
 }
 
-
 model User {
-  id        String           @id @default(uuid())
+  id        String          @id @default(uuid())
   name      String
-  email     String           @unique
+  email     String          @unique
   password  String
-  createdAt DateTime         @default(now())
-  stores    UserStoreRole[]  // Relation to stores via roles
+  createdAt DateTime        @default(now())
+  stores    UserStoreRole[] // Relation to stores via roles
 }
 
 model Store {
-  id          String           @id @default(uuid())
-  ownerId     String
-  name        String
-  category    String?
-  logoUrl     String?
-  siteIcon    String?
-  mainDomain  String?
-  currency    String           @default("Rs")
-  createdAt   DateTime         @default(now())
-  users       UserStoreRole[]  // Relation to users via roles
+  id         String          @id @default(uuid())
+  ownerId    String
+  name       String
+  category   String?
+  logoUrl    String?
+  siteIcon   String?
+  mainDomain String?
+  currency   String          @default("Rs")
+  createdAt  DateTime        @default(now())
+  users      UserStoreRole[] // Relation to users via roles
+  customers  Customer[]
+  domains    Domain[]
 }
 
 model UserStoreRole {
   id      String @id @default(uuid())
   userId  String
   storeId String
-  role    Role 
+  role    Role
 
   user  User  @relation(fields: [userId], references: [id])
   store Store @relation(fields: [storeId], references: [id])
@@ -52,4 +53,46 @@ enum Role {
   OWNER
   ADMIN
   STAFF
+}
+
+// Customers
+
+model Customer {
+  id        String   @id @default(uuid())
+  storeId   String
+  firstName String
+  lastName  String
+  email     String
+  phone     String?
+  address   String?
+  state     String?
+  city      String?
+  country   String?
+  zipCode   String?
+  createdAt DateTime @default(now())
+
+  store Store @relation(fields: [storeId], references: [id])
+
+  @@unique([storeId, phone])
+}
+
+// Domains
+
+model Domain {
+  id          String    @id @default(uuid())
+  storeId     String
+  domain      String    @unique
+  isPrimary   Boolean   @default(false)
+  status      DomainStatus   @default(PENDING) // e.g., pending, verified
+  lastChecked DateTime?
+  createdAt   DateTime  @default(now())
+
+  store Store @relation(fields: [storeId], references: [id])
+}
+
+enum DomainStatus {
+  PENDING
+  VERIFIED
+  ACTIVE
+  FAILED
 }

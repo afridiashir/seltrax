@@ -3,10 +3,10 @@ import prisma from "../../db/prisma-client";
 import { AuthenticatedRequest } from "../../types/request.types";
 
 
-export const me = async (req: Request, res: Response) => {
+export const me = async (req: AuthenticatedRequest, res: Response) => {
     try {
         
-        const userId = req.user?.userId;
+        const userId = req.user?.id;
 
         const user = await prisma.user.findUnique({
             where: { id: userId },

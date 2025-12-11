@@ -16,8 +16,13 @@ export const auth = (req: Request, res: Response, next: NextFunction) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
 
-    // attach to request
-    (req as any).user = decoded;
+    
+    req.user = {
+      id: decoded.id,
+      email: decoded.email,
+      role: decoded.role,
+    };
+
 
     next();
   } catch (err) {
