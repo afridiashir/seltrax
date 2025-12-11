@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { auth } from "../../middlewares/auth.middleware";
 import { storeContext } from "../../middlewares/storeContext.middleware";
-import { domains, customerCreate,customerDetails, customerUpdate, customerDelete } from "./domains.controller";
+import { domains, domainCreate, domainUpdate, domainDelete } from "./domains.controller";
 
 const router = Router();
 
@@ -9,13 +9,12 @@ router.use(auth);
 router.use(storeContext);
 
 router.get("/", domains);
-router.get("/:id", customerDetails);
 
-router.post("/create", customerCreate);
+router.post("/create", domainCreate);
 
-router.put("/update/:id", customerUpdate);
+router.put("/update/:id", domainUpdate);
 
-router.delete("/:id", customerDelete);
+router.delete("/:id", domainDelete);
 
 
 export default router;
