@@ -5,7 +5,7 @@ import userRoutes from "./modules/users/users.routes";
 import storeRoutes from "./modules/stores/stores.route";
 import customerRoutes from "./modules/customers/customers.route";
 import domainRoutes from "./modules/domains/domains.route";
-import { domain } from 'zod/v4/core/regexes.cjs';
+import shippingRoutes from "./modules/shipping/shipping.route"
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -17,6 +17,7 @@ app.use('/user', userRoutes);
 app.use('/stores',storeRoutes);
 app.use('/customers', customerRoutes);
 app.use('/domains', domainRoutes);
+app.use('/shippings', shippingRoutes);
 
 
 

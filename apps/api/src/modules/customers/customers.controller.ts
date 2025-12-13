@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import prisma from "../../db/prisma-client";
+import prisma from "@repo/db";
 import { customerCreateSchema, customerUpdateSchema } from "@repo/zod-schemas";
 
 export const customers = async (req: Request, res: Response) => {

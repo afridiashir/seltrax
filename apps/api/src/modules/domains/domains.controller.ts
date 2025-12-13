@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import prisma from "../../db/prisma-client";
+import prisma from "@repo/db";
 import { domainCreateSchema, domainUpdateSchema } from "@repo/zod-schemas";
 
 export const domains = async (req: Request, res: Response) => {

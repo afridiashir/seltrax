@@ -1,8 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
   provider = "prisma-client"
@@ -35,6 +31,8 @@ model Store {
   users      UserStoreRole[] // Relation to users via roles
   customers  Customer[]
   domains    Domain[]
+  shippingRate  ShippingRate[]
+  taxRules      TaxRules[] 
 }
 
 model UserStoreRole {
@@ -79,13 +77,13 @@ model Customer {
 // Domains
 
 model Domain {
-  id          String    @id @default(uuid())
+  id          String       @id @default(uuid())
   storeId     String
-  domain      String    @unique
-  isPrimary   Boolean   @default(false)
-  status      DomainStatus   @default(PENDING) // e.g., pending, verified
+  domain      String       @unique
+  isPrimary   Boolean      @default(false)
+  status      DomainStatus @default(PENDING) // e.g., pending, verified
   lastChecked DateTime?
-  createdAt   DateTime  @default(now())
+  createdAt   DateTime     @default(now())
 
   store Store @relation(fields: [storeId], references: [id])
 }
@@ -96,3 +94,39 @@ enum DomainStatus {
   ACTIVE
   FAILED
 }
+
+// Shipping Options 
+
+model ShippingRate {
+  id      String @id @default(uuid())
+  storeId String
+
+  name  String 
+  price Float // price for this rate (0 if free)
+
+  minOrderPrice Float? // e.g., free above 5000
+  maxOrderPrice Float? // optional
+
+  minWeight Float? // for weight-based shipping (optional)
+  maxWeight Float? // optional
+
+  estimatedDeliveryDays Int? // optional
+
+  createdAt DateTime @default(now())
+
+  store Store @relation(fields: [storeId], references: [id])
+}
+
+model TaxRules {
+  id        String  @id @default(uuid())
+  storeId   String
+  name      String
+  percentage Float?
+  fixedAmount   Float?
+  createdAt DateTime @default(now())
+
+  store Store @relation(fields: [storeId], references: [id])
+}
+
+
+
