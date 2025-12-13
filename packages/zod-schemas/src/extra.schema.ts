@@ -43,3 +43,20 @@ export const shippingUpdateSchema = z.object({
 });
 
 export type ShippingUpdateInput = z.infer<typeof shippingUpdateSchema>;
+
+export const taxRuleCreateSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  percentage: z.number().min(0).max(100).optional(),
+  fixedAmount: z.number().min(0).optional(),
+});
+
+
+export type TaxRuleInput = z.infer<typeof taxRuleCreateSchema>;
+
+export const taxRuleUpdateSchema = z.object({
+  name: z.string().min(1, "Name is required").optional(),
+  percentage: z.number().min(0).max(100).optional(),
+  fixedAmount: z.number().min(0).optional(),
+});
+
+export type TaxRuleUpdateInput = z.infer<typeof taxRuleUpdateSchema>;
