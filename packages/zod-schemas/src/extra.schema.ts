@@ -60,3 +60,11 @@ export const taxRuleUpdateSchema = z.object({
 });
 
 export type TaxRuleUpdateInput = z.infer<typeof taxRuleUpdateSchema>;
+
+export const paymentGatewayCreateSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  description: z.string().optional(),
+});
+
+export type PaymentGatewayInput = z.infer<typeof paymentGatewayCreateSchema>;
+

@@ -33,6 +33,7 @@ model Store {
   domains    Domain[]
   shippingRate  ShippingRate[]
   taxRules      TaxRules[] 
+  paymentMethods paymentMethods[]
 }
 
 model UserStoreRole {
@@ -123,6 +124,17 @@ model TaxRules {
   name      String
   percentage Float?
   fixedAmount   Float?
+  createdAt DateTime @default(now())
+
+  store Store @relation(fields: [storeId], references: [id])
+}
+
+model paymentMethods {
+  id        String  @id @default(uuid())
+  storeId   String
+  name      String
+  description String?
+  details   Json?
   createdAt DateTime @default(now())
 
   store Store @relation(fields: [storeId], references: [id])

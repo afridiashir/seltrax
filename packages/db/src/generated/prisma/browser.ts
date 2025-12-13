@@ -52,3 +52,8 @@ export type ShippingRate = Prisma.ShippingRateModel
  * 
  */
 export type TaxRules = Prisma.TaxRulesModel
+/**
+ * Model paymentMethods
+ * 
+ */
+export type paymentMethods = Prisma.paymentMethodsModel

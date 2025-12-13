@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { auth } from "../../middlewares/auth.middleware";
-import { storeContext } from "../../middlewares/storeContext.middleware";
+import { auth } from "../../../middlewares/auth.middleware";
+import { storeContext } from "../../../middlewares/storeContext.middleware";
 import { shipping, shippingCreate, shippingUpdate, shippingDelete, shippingRate } from "./shipping.controller";
 
 const router = Router();

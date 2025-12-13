@@ -390,7 +390,8 @@ export const ModelName = {
   Customer: 'Customer',
   Domain: 'Domain',
   ShippingRate: 'ShippingRate',
-  TaxRules: 'TaxRules'
+  TaxRules: 'TaxRules',
+  paymentMethods: 'paymentMethods'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -406,7 +407,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "store" | "userStoreRole" | "customer" | "domain" | "shippingRate" | "taxRules"
+    modelProps: "user" | "store" | "userStoreRole" | "customer" | "domain" | "shippingRate" | "taxRules" | "paymentMethods"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -928,6 +929,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    paymentMethods: {
+      payload: Prisma.$paymentMethodsPayload<ExtArgs>
+      fields: Prisma.paymentMethodsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.paymentMethodsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.paymentMethodsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>
+        }
+        findFirst: {
+          args: Prisma.paymentMethodsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.paymentMethodsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>
+        }
+        findMany: {
+          args: Prisma.paymentMethodsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>[]
+        }
+        create: {
+          args: Prisma.paymentMethodsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>
+        }
+        createMany: {
+          args: Prisma.paymentMethodsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.paymentMethodsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>[]
+        }
+        delete: {
+          args: Prisma.paymentMethodsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>
+        }
+        update: {
+          args: Prisma.paymentMethodsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>
+        }
+        deleteMany: {
+          args: Prisma.paymentMethodsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.paymentMethodsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.paymentMethodsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>[]
+        }
+        upsert: {
+          args: Prisma.paymentMethodsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$paymentMethodsPayload>
+        }
+        aggregate: {
+          args: Prisma.PaymentMethodsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePaymentMethods>
+        }
+        groupBy: {
+          args: Prisma.paymentMethodsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PaymentMethodsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.paymentMethodsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PaymentMethodsCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1062,12 +1137,32 @@ export const TaxRulesScalarFieldEnum = {
 export type TaxRulesScalarFieldEnum = (typeof TaxRulesScalarFieldEnum)[keyof typeof TaxRulesScalarFieldEnum]
 
 
+export const PaymentMethodsScalarFieldEnum = {
+  id: 'id',
+  storeId: 'storeId',
+  name: 'name',
+  description: 'description',
+  details: 'details',
+  createdAt: 'createdAt'
+} as const
+
+export type PaymentMethodsScalarFieldEnum = (typeof PaymentMethodsScalarFieldEnum)[keyof typeof PaymentMethodsScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
 export const QueryMode = {
@@ -1084,6 +1179,15 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
 
@@ -1180,6 +1284,20 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
+ * Reference to a field of type 'QueryMode'
+ */
+export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
     
 
 /**
@@ -1284,6 +1402,7 @@ export type GlobalOmitConfig = {
   domain?: Prisma.DomainOmit
   shippingRate?: Prisma.ShippingRateOmit
   taxRules?: Prisma.TaxRulesOmit
+  paymentMethods?: Prisma.paymentMethodsOmit
 }
 
 /* Types for Logging */
