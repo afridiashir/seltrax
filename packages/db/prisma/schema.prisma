@@ -34,6 +34,7 @@ model Store {
   shippingRate  ShippingRate[]
   taxRules      TaxRules[] 
   paymentMethods paymentMethods[]
+  coupons       Coupons[]
 }
 
 model UserStoreRole {
@@ -140,5 +141,29 @@ model paymentMethods {
   store Store @relation(fields: [storeId], references: [id])
 }
 
+model Coupons {
+  id       String   @id @default(uuid())
+  storeId   String
+  code      String   @unique
+  discount  Float    // e.g., percentage or fixed amount
+  type      CouponType   // e.g., percentage, fixed
+  minOrderValue Float? // minimum order value to apply coupon
+  maxDiscount Float? // maximum discount limit
+  startDate DateTime?
+  endDate   DateTime?
+  usageLimit Int? // maximum times this coupon can be used
+  usedCount Int @default(0) // how many times this coupon has been used
+  isActive  Boolean @default(true) // whether the coupon is active
 
 
+  createdAt DateTime @default(now())
+  store Store @relation(fields: [storeId], references: [id])
+
+  
+  @@unique([storeId, code])
+}
+
+enum CouponType {
+  PERCENTAGE
+  FIXED
+}

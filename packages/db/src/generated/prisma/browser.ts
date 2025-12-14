@@ -57,3 +57,8 @@ export type TaxRules = Prisma.TaxRulesModel
  * 
  */
 export type paymentMethods = Prisma.paymentMethodsModel
+/**
+ * Model Coupons
+ * 
+ */
+export type Coupons = Prisma.CouponsModel

@@ -26,3 +26,11 @@ export const DomainStatus = {
 } as const
 
 export type DomainStatus = (typeof DomainStatus)[keyof typeof DomainStatus]
+
+
+export const CouponType = {
+  PERCENTAGE: 'PERCENTAGE',
+  FIXED: 'FIXED'
+} as const
+
+export type CouponType = (typeof CouponType)[keyof typeof CouponType]
