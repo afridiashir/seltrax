@@ -59,7 +59,8 @@ export const ModelName = {
   ShippingRate: 'ShippingRate',
   TaxRules: 'TaxRules',
   paymentMethods: 'paymentMethods',
-  Coupons: 'Coupons'
+  Coupons: 'Coupons',
+  Collection: 'Collection'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -202,6 +203,24 @@ export const CouponsScalarFieldEnum = {
 } as const
 
 export type CouponsScalarFieldEnum = (typeof CouponsScalarFieldEnum)[keyof typeof CouponsScalarFieldEnum]
+
+
+export const CollectionScalarFieldEnum = {
+  id: 'id',
+  storeId: 'storeId',
+  name: 'name',
+  description: 'description',
+  slug: 'slug',
+  imageUrl: 'imageUrl',
+  headerImageUrl: 'headerImageUrl',
+  seoTitle: 'seoTitle',
+  seoDescription: 'seoDescription',
+  seoKeywords: 'seoKeywords',
+  parentId: 'parentId',
+  createdAt: 'createdAt'
+} as const
+
+export type CollectionScalarFieldEnum = (typeof CollectionScalarFieldEnum)[keyof typeof CollectionScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -35,6 +35,7 @@ model Store {
   taxRules      TaxRules[] 
   paymentMethods paymentMethods[]
   coupons       Coupons[]
+  collections   Collection[]
 }
 
 model UserStoreRole {
@@ -166,4 +167,30 @@ model Coupons {
 enum CouponType {
   PERCENTAGE
   FIXED
+}
+
+model Collection {
+  id              String   @id @default(uuid())
+  storeId         String
+  name            String
+  description     String?
+  slug            String   @unique
+  imageUrl        String?
+  headerImageUrl  String?
+
+  // SEO fields
+  seoTitle        String?
+  seoDescription  String?
+  seoKeywords     String?
+
+  // Parent–child hierarchy
+  parentId        String?
+  parent          Collection? @relation("CollectionHierarchy", fields: [parentId], references: [id])
+  children        Collection[] @relation("CollectionHierarchy")
+
+  createdAt       DateTime @default(now())
+
+  store           Store @relation(fields: [storeId], references: [id])
+
+  @@unique([storeId, slug])
 }

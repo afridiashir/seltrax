@@ -62,3 +62,8 @@ export type paymentMethods = Prisma.paymentMethodsModel
  * 
  */
 export type Coupons = Prisma.CouponsModel
+/**
+ * Model Collection
+ * 
+ */
+export type Collection = Prisma.CollectionModel
