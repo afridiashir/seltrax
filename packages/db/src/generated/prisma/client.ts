@@ -73,10 +73,10 @@ export type ShippingRate = Prisma.ShippingRateModel
  */
 export type TaxRules = Prisma.TaxRulesModel
 /**
- * Model paymentMethods
+ * Model PaymentGateway
  * 
  */
-export type paymentMethods = Prisma.paymentMethodsModel
+export type PaymentGateway = Prisma.PaymentGatewayModel
 /**
  * Model Coupons
  * 
@@ -87,3 +87,48 @@ export type Coupons = Prisma.CouponsModel
  * 
  */
 export type Collection = Prisma.CollectionModel
+/**
+ * Model Plan
+ * 
+ */
+export type Plan = Prisma.PlanModel
+/**
+ * Model Subscription
+ * 
+ */
+export type Subscription = Prisma.SubscriptionModel
+/**
+ * Model Media
+ * 
+ */
+export type Media = Prisma.MediaModel
+/**
+ * Model MediaRelation
+ * 
+ */
+export type MediaRelation = Prisma.MediaRelationModel
+/**
+ * Model Product
+ * 
+ */
+export type Product = Prisma.ProductModel
+/**
+ * Model ProductOption
+ * 
+ */
+export type ProductOption = Prisma.ProductOptionModel
+/**
+ * Model ProductOptionValue
+ * 
+ */
+export type ProductOptionValue = Prisma.ProductOptionValueModel
+/**
+ * Model ProductVariant
+ * 
+ */
+export type ProductVariant = Prisma.ProductVariantModel
+/**
+ * Model ProductVariantOption
+ * 
+ */
+export type ProductVariantOption = Prisma.ProductVariantOptionModel

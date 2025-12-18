@@ -58,9 +58,18 @@ export const ModelName = {
   Domain: 'Domain',
   ShippingRate: 'ShippingRate',
   TaxRules: 'TaxRules',
-  paymentMethods: 'paymentMethods',
+  PaymentGateway: 'PaymentGateway',
   Coupons: 'Coupons',
-  Collection: 'Collection'
+  Collection: 'Collection',
+  Plan: 'Plan',
+  Subscription: 'Subscription',
+  Media: 'Media',
+  MediaRelation: 'MediaRelation',
+  Product: 'Product',
+  ProductOption: 'ProductOption',
+  ProductOptionValue: 'ProductOptionValue',
+  ProductVariant: 'ProductVariant',
+  ProductVariantOption: 'ProductVariantOption'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -174,7 +183,7 @@ export const TaxRulesScalarFieldEnum = {
 export type TaxRulesScalarFieldEnum = (typeof TaxRulesScalarFieldEnum)[keyof typeof TaxRulesScalarFieldEnum]
 
 
-export const PaymentMethodsScalarFieldEnum = {
+export const PaymentGatewayScalarFieldEnum = {
   id: 'id',
   storeId: 'storeId',
   name: 'name',
@@ -183,7 +192,7 @@ export const PaymentMethodsScalarFieldEnum = {
   createdAt: 'createdAt'
 } as const
 
-export type PaymentMethodsScalarFieldEnum = (typeof PaymentMethodsScalarFieldEnum)[keyof typeof PaymentMethodsScalarFieldEnum]
+export type PaymentGatewayScalarFieldEnum = (typeof PaymentGatewayScalarFieldEnum)[keyof typeof PaymentGatewayScalarFieldEnum]
 
 
 export const CouponsScalarFieldEnum = {
@@ -221,6 +230,118 @@ export const CollectionScalarFieldEnum = {
 } as const
 
 export type CollectionScalarFieldEnum = (typeof CollectionScalarFieldEnum)[keyof typeof CollectionScalarFieldEnum]
+
+
+export const PlanScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  price: 'price',
+  currency: 'currency',
+  interval: 'interval',
+  createdAt: 'createdAt'
+} as const
+
+export type PlanScalarFieldEnum = (typeof PlanScalarFieldEnum)[keyof typeof PlanScalarFieldEnum]
+
+
+export const SubscriptionScalarFieldEnum = {
+  id: 'id',
+  storeId: 'storeId',
+  planId: 'planId',
+  status: 'status',
+  startDate: 'startDate',
+  endDate: 'endDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SubscriptionScalarFieldEnum = (typeof SubscriptionScalarFieldEnum)[keyof typeof SubscriptionScalarFieldEnum]
+
+
+export const MediaScalarFieldEnum = {
+  id: 'id',
+  storeId: 'storeId',
+  url: 'url',
+  type: 'type',
+  mimeType: 'mimeType',
+  size: 'size',
+  altText: 'altText',
+  createdAt: 'createdAt'
+} as const
+
+export type MediaScalarFieldEnum = (typeof MediaScalarFieldEnum)[keyof typeof MediaScalarFieldEnum]
+
+
+export const MediaRelationScalarFieldEnum = {
+  id: 'id',
+  mediaId: 'mediaId',
+  entityId: 'entityId',
+  entityType: 'entityType',
+  sortOrder: 'sortOrder',
+  createdAt: 'createdAt'
+} as const
+
+export type MediaRelationScalarFieldEnum = (typeof MediaRelationScalarFieldEnum)[keyof typeof MediaRelationScalarFieldEnum]
+
+
+export const ProductScalarFieldEnum = {
+  id: 'id',
+  storeId: 'storeId',
+  title: 'title',
+  description: 'description',
+  slug: 'slug',
+  price: 'price',
+  salePrice: 'salePrice',
+  mainImage: 'mainImage',
+  status: 'status',
+  createdAt: 'createdAt'
+} as const
+
+export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
+export const ProductOptionScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  name: 'name',
+  sortOrder: 'sortOrder'
+} as const
+
+export type ProductOptionScalarFieldEnum = (typeof ProductOptionScalarFieldEnum)[keyof typeof ProductOptionScalarFieldEnum]
+
+
+export const ProductOptionValueScalarFieldEnum = {
+  id: 'id',
+  optionId: 'optionId',
+  value: 'value',
+  sortOrder: 'sortOrder'
+} as const
+
+export type ProductOptionValueScalarFieldEnum = (typeof ProductOptionValueScalarFieldEnum)[keyof typeof ProductOptionValueScalarFieldEnum]
+
+
+export const ProductVariantScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  sku: 'sku',
+  barcode: 'barcode',
+  price: 'price',
+  salePrice: 'salePrice',
+  stock: 'stock',
+  createdAt: 'createdAt'
+} as const
+
+export type ProductVariantScalarFieldEnum = (typeof ProductVariantScalarFieldEnum)[keyof typeof ProductVariantScalarFieldEnum]
+
+
+export const ProductVariantOptionScalarFieldEnum = {
+  id: 'id',
+  variantId: 'variantId',
+  optionId: 'optionId',
+  valueId: 'valueId'
+} as const
+
+export type ProductVariantOptionScalarFieldEnum = (typeof ProductVariantOptionScalarFieldEnum)[keyof typeof ProductVariantOptionScalarFieldEnum]
 
 
 export const SortOrder = {

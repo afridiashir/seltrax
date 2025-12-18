@@ -7,7 +7,7 @@ export const paymentGateways = async (req: Request, res: Response) => {
   try {
     const storeId = req.context?.storeId;
 
-    const paymentGateways = await prisma.paymentMethods.findMany({
+    const paymentGateways = await prisma.paymentGateway.findMany({
       where: {
         storeId,
       }
@@ -42,7 +42,7 @@ export const paymentGatewaysCreate = async (req: Request, res: Response) => {
 
     const { name , description } = req.body;
 
-     const taxRuleData = await prisma.paymentMethods.create({
+     const taxRuleData = await prisma.paymentGateway.create({
       data: {
         storeId,
         name,
@@ -69,7 +69,7 @@ export const paymentGatewayUpdate = async (req: Request, res: Response) => {
     
     const { name , description } = req.body;
 
-     const paymentGateway = await prisma.paymentMethods.updateMany({
+     const paymentGateway = await prisma.paymentGateway.updateMany({
       where: { id: paymentGatewayId, storeId },
       data: {
         name,
@@ -93,7 +93,7 @@ export const paymentGatewayDelete = async (req: Request, res: Response) => {
   try {
     const storeId = req.context?.storeId;
     const paymentGatewayId = req.params.id;
-    const deleted = await prisma.paymentMethods.deleteMany({
+    const deleted = await prisma.paymentGateway.deleteMany({
       where: { id: paymentGatewayId, storeId },
     });
     if (deleted.count === 0) {

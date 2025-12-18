@@ -5,5 +5,6 @@ export * from './store.schema';
 export * from './customers.schema';
 export * from './extra.schema';
 export * from './collections.schema';
+export * from './media.schema'
 
 export {z};

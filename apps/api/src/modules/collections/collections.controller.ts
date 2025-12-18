@@ -92,7 +92,7 @@ export const collectionUpdate = async (req: Request, res: Response) => {
     if (collectionUpdate.count === 0) {
         return res.status(404).json({ message: "Collection not found or no changes made" });
     }
-    res.status(200).json({ message: "Coupon Updated", coupon: collectionUpdate });
+    res.status(200).json({ message: "Collection Updated", collection: collectionUpdate });
     } catch (err: any) {
     console.error(err);
     res.status(500).json({ message: err.message || "Server error" });

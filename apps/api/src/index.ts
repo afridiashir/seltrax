@@ -8,8 +8,22 @@ import domainRoutes from "./modules/settings/domains/domains.route";
 import shippingRoutes from "./modules/settings/shipping/shipping.route"
 import taxRulesRoutes from "./modules/settings/taxRules/taxRules.route"
 import paymentGatewayRoutes from "./modules/settings/paymentGateways/paymentGateways.route"
+import cors from "cors";
 
 const app = express();
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // Vite
+      "http://localhost:3000", // Next.js
+      "https://seltrax.com",    // Production
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
+
 const port = process.env.PORT || 5001;
 app.use(express.json());
 app.use(morgan('dev'));

@@ -34,3 +34,39 @@ export const CouponType = {
 } as const
 
 export type CouponType = (typeof CouponType)[keyof typeof CouponType]
+
+
+export const PlanInterval = {
+  MONTHLY: 'MONTHLY',
+  YEARLY: 'YEARLY'
+} as const
+
+export type PlanInterval = (typeof PlanInterval)[keyof typeof PlanInterval]
+
+
+export const SubscriptionStatus = {
+  ACTIVE: 'ACTIVE',
+  TRIALING: 'TRIALING',
+  CANCELED: 'CANCELED',
+  EXPIRED: 'EXPIRED',
+  PAUSED: 'PAUSED'
+} as const
+
+export type SubscriptionStatus = (typeof SubscriptionStatus)[keyof typeof SubscriptionStatus]
+
+
+export const MediaEntityType = {
+  PRODUCT: 'PRODUCT',
+  VARIANT: 'VARIANT'
+} as const
+
+export type MediaEntityType = (typeof MediaEntityType)[keyof typeof MediaEntityType]
+
+
+export const ProductStatus = {
+  DRAFT: 'DRAFT',
+  ACTIVE: 'ACTIVE',
+  ARCHIVED: 'ARCHIVED'
+} as const
+
+export type ProductStatus = (typeof ProductStatus)[keyof typeof ProductStatus]

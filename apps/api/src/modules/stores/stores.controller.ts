@@ -160,3 +160,49 @@ export const storeUpdate = async (req: Request, res: Response) => {
     res.status(500).json({ message: err.message || "Server error" });
   }
 };
+
+
+export const storeSubscription = async (req: AuthenticatedRequest, res: Response) => {
+  try {
+    const storeId = req.context?.storeId;
+
+    if (!storeId) {
+      return res.status(400).json({ message: "Store ID is required in header." });
+    }
+
+
+    const subscription = await prisma.subscription.findFirst({
+      where: { storeId },
+      select: {
+        id: true,
+        planId: true,
+        status: true,
+        startDate: true,
+        endDate: true,
+        plan: {
+          select: {
+            name: true,
+            price: true,
+          },
+        },
+      },
+    });
+
+    if (!subscription) {
+      return res.status(404).json({ message: "Subscription not found" });
+    }
+    const result = {
+      id: subscription.id,
+      planId: subscription.planId,
+      planName: subscription.plan.name,
+      price: subscription.plan.price,
+      status: subscription.status,
+      startDate: subscription.startDate,
+      endDate: subscription.endDate,
+    };
+    res.json({ subscription: result });
+  } catch (err: any) {
+    console.error(err);
+    res.status(500).json({ message: err.message || "Server error" });
+  }
+};

@@ -219,9 +219,12 @@ export type StoreWhereInput = {
   domains?: Prisma.DomainListRelationFilter
   shippingRate?: Prisma.ShippingRateListRelationFilter
   taxRules?: Prisma.TaxRulesListRelationFilter
-  paymentMethods?: Prisma.PaymentMethodsListRelationFilter
+  paymentGateway?: Prisma.PaymentGatewayListRelationFilter
   coupons?: Prisma.CouponsListRelationFilter
   collections?: Prisma.CollectionListRelationFilter
+  media?: Prisma.MediaListRelationFilter
+  subscriptions?: Prisma.SubscriptionListRelationFilter
+  products?: Prisma.ProductListRelationFilter
 }
 
 export type StoreOrderByWithRelationInput = {
@@ -239,9 +242,12 @@ export type StoreOrderByWithRelationInput = {
   domains?: Prisma.DomainOrderByRelationAggregateInput
   shippingRate?: Prisma.ShippingRateOrderByRelationAggregateInput
   taxRules?: Prisma.TaxRulesOrderByRelationAggregateInput
-  paymentMethods?: Prisma.paymentMethodsOrderByRelationAggregateInput
+  paymentGateway?: Prisma.PaymentGatewayOrderByRelationAggregateInput
   coupons?: Prisma.CouponsOrderByRelationAggregateInput
   collections?: Prisma.CollectionOrderByRelationAggregateInput
+  media?: Prisma.MediaOrderByRelationAggregateInput
+  subscriptions?: Prisma.SubscriptionOrderByRelationAggregateInput
+  products?: Prisma.ProductOrderByRelationAggregateInput
 }
 
 export type StoreWhereUniqueInput = Prisma.AtLeast<{
@@ -262,9 +268,12 @@ export type StoreWhereUniqueInput = Prisma.AtLeast<{
   domains?: Prisma.DomainListRelationFilter
   shippingRate?: Prisma.ShippingRateListRelationFilter
   taxRules?: Prisma.TaxRulesListRelationFilter
-  paymentMethods?: Prisma.PaymentMethodsListRelationFilter
+  paymentGateway?: Prisma.PaymentGatewayListRelationFilter
   coupons?: Prisma.CouponsListRelationFilter
   collections?: Prisma.CollectionListRelationFilter
+  media?: Prisma.MediaListRelationFilter
+  subscriptions?: Prisma.SubscriptionListRelationFilter
+  products?: Prisma.ProductListRelationFilter
 }, "id">
 
 export type StoreOrderByWithAggregationInput = {
@@ -312,9 +321,12 @@ export type StoreCreateInput = {
   domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateInput = {
@@ -332,9 +344,12 @@ export type StoreUncheckedCreateInput = {
   domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUpdateInput = {
@@ -352,9 +367,12 @@ export type StoreUpdateInput = {
   domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateInput = {
@@ -372,9 +390,12 @@ export type StoreUncheckedUpdateInput = {
   domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateManyInput = {
@@ -528,18 +549,18 @@ export type StoreUpdateOneRequiredWithoutTaxRulesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.StoreUpdateToOneWithWhereWithoutTaxRulesInput, Prisma.StoreUpdateWithoutTaxRulesInput>, Prisma.StoreUncheckedUpdateWithoutTaxRulesInput>
 }
 
-export type StoreCreateNestedOneWithoutPaymentMethodsInput = {
-  create?: Prisma.XOR<Prisma.StoreCreateWithoutPaymentMethodsInput, Prisma.StoreUncheckedCreateWithoutPaymentMethodsInput>
-  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutPaymentMethodsInput
+export type StoreCreateNestedOneWithoutPaymentGatewayInput = {
+  create?: Prisma.XOR<Prisma.StoreCreateWithoutPaymentGatewayInput, Prisma.StoreUncheckedCreateWithoutPaymentGatewayInput>
+  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutPaymentGatewayInput
   connect?: Prisma.StoreWhereUniqueInput
 }
 
-export type StoreUpdateOneRequiredWithoutPaymentMethodsNestedInput = {
-  create?: Prisma.XOR<Prisma.StoreCreateWithoutPaymentMethodsInput, Prisma.StoreUncheckedCreateWithoutPaymentMethodsInput>
-  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutPaymentMethodsInput
-  upsert?: Prisma.StoreUpsertWithoutPaymentMethodsInput
+export type StoreUpdateOneRequiredWithoutPaymentGatewayNestedInput = {
+  create?: Prisma.XOR<Prisma.StoreCreateWithoutPaymentGatewayInput, Prisma.StoreUncheckedCreateWithoutPaymentGatewayInput>
+  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutPaymentGatewayInput
+  upsert?: Prisma.StoreUpsertWithoutPaymentGatewayInput
   connect?: Prisma.StoreWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.StoreUpdateToOneWithWhereWithoutPaymentMethodsInput, Prisma.StoreUpdateWithoutPaymentMethodsInput>, Prisma.StoreUncheckedUpdateWithoutPaymentMethodsInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.StoreUpdateToOneWithWhereWithoutPaymentGatewayInput, Prisma.StoreUpdateWithoutPaymentGatewayInput>, Prisma.StoreUncheckedUpdateWithoutPaymentGatewayInput>
 }
 
 export type StoreCreateNestedOneWithoutCouponsInput = {
@@ -570,6 +591,48 @@ export type StoreUpdateOneRequiredWithoutCollectionsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.StoreUpdateToOneWithWhereWithoutCollectionsInput, Prisma.StoreUpdateWithoutCollectionsInput>, Prisma.StoreUncheckedUpdateWithoutCollectionsInput>
 }
 
+export type StoreCreateNestedOneWithoutSubscriptionsInput = {
+  create?: Prisma.XOR<Prisma.StoreCreateWithoutSubscriptionsInput, Prisma.StoreUncheckedCreateWithoutSubscriptionsInput>
+  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutSubscriptionsInput
+  connect?: Prisma.StoreWhereUniqueInput
+}
+
+export type StoreUpdateOneRequiredWithoutSubscriptionsNestedInput = {
+  create?: Prisma.XOR<Prisma.StoreCreateWithoutSubscriptionsInput, Prisma.StoreUncheckedCreateWithoutSubscriptionsInput>
+  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutSubscriptionsInput
+  upsert?: Prisma.StoreUpsertWithoutSubscriptionsInput
+  connect?: Prisma.StoreWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.StoreUpdateToOneWithWhereWithoutSubscriptionsInput, Prisma.StoreUpdateWithoutSubscriptionsInput>, Prisma.StoreUncheckedUpdateWithoutSubscriptionsInput>
+}
+
+export type StoreCreateNestedOneWithoutMediaInput = {
+  create?: Prisma.XOR<Prisma.StoreCreateWithoutMediaInput, Prisma.StoreUncheckedCreateWithoutMediaInput>
+  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutMediaInput
+  connect?: Prisma.StoreWhereUniqueInput
+}
+
+export type StoreUpdateOneRequiredWithoutMediaNestedInput = {
+  create?: Prisma.XOR<Prisma.StoreCreateWithoutMediaInput, Prisma.StoreUncheckedCreateWithoutMediaInput>
+  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutMediaInput
+  upsert?: Prisma.StoreUpsertWithoutMediaInput
+  connect?: Prisma.StoreWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.StoreUpdateToOneWithWhereWithoutMediaInput, Prisma.StoreUpdateWithoutMediaInput>, Prisma.StoreUncheckedUpdateWithoutMediaInput>
+}
+
+export type StoreCreateNestedOneWithoutProductsInput = {
+  create?: Prisma.XOR<Prisma.StoreCreateWithoutProductsInput, Prisma.StoreUncheckedCreateWithoutProductsInput>
+  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutProductsInput
+  connect?: Prisma.StoreWhereUniqueInput
+}
+
+export type StoreUpdateOneRequiredWithoutProductsNestedInput = {
+  create?: Prisma.XOR<Prisma.StoreCreateWithoutProductsInput, Prisma.StoreUncheckedCreateWithoutProductsInput>
+  connectOrCreate?: Prisma.StoreCreateOrConnectWithoutProductsInput
+  upsert?: Prisma.StoreUpsertWithoutProductsInput
+  connect?: Prisma.StoreWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.StoreUpdateToOneWithWhereWithoutProductsInput, Prisma.StoreUpdateWithoutProductsInput>, Prisma.StoreUncheckedUpdateWithoutProductsInput>
+}
+
 export type StoreCreateWithoutUsersInput = {
   id?: string
   ownerId: string
@@ -584,9 +647,12 @@ export type StoreCreateWithoutUsersInput = {
   domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutUsersInput = {
@@ -603,9 +669,12 @@ export type StoreUncheckedCreateWithoutUsersInput = {
   domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutUsersInput = {
@@ -638,9 +707,12 @@ export type StoreUpdateWithoutUsersInput = {
   domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutUsersInput = {
@@ -657,9 +729,12 @@ export type StoreUncheckedUpdateWithoutUsersInput = {
   domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutCustomersInput = {
@@ -676,9 +751,12 @@ export type StoreCreateWithoutCustomersInput = {
   domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutCustomersInput = {
@@ -695,9 +773,12 @@ export type StoreUncheckedCreateWithoutCustomersInput = {
   domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutCustomersInput = {
@@ -730,9 +811,12 @@ export type StoreUpdateWithoutCustomersInput = {
   domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutCustomersInput = {
@@ -749,9 +833,12 @@ export type StoreUncheckedUpdateWithoutCustomersInput = {
   domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutDomainsInput = {
@@ -768,9 +855,12 @@ export type StoreCreateWithoutDomainsInput = {
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutDomainsInput = {
@@ -787,9 +877,12 @@ export type StoreUncheckedCreateWithoutDomainsInput = {
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutDomainsInput = {
@@ -822,9 +915,12 @@ export type StoreUpdateWithoutDomainsInput = {
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutDomainsInput = {
@@ -841,9 +937,12 @@ export type StoreUncheckedUpdateWithoutDomainsInput = {
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutShippingRateInput = {
@@ -860,9 +959,12 @@ export type StoreCreateWithoutShippingRateInput = {
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
   domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutShippingRateInput = {
@@ -879,9 +981,12 @@ export type StoreUncheckedCreateWithoutShippingRateInput = {
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
   domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutShippingRateInput = {
@@ -914,9 +1019,12 @@ export type StoreUpdateWithoutShippingRateInput = {
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
   domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutShippingRateInput = {
@@ -933,9 +1041,12 @@ export type StoreUncheckedUpdateWithoutShippingRateInput = {
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
   domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutTaxRulesInput = {
@@ -952,9 +1063,12 @@ export type StoreCreateWithoutTaxRulesInput = {
   customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
   domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutTaxRulesInput = {
@@ -971,9 +1085,12 @@ export type StoreUncheckedCreateWithoutTaxRulesInput = {
   customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
   domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutTaxRulesInput = {
@@ -1006,9 +1123,12 @@ export type StoreUpdateWithoutTaxRulesInput = {
   customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
   domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutTaxRulesInput = {
@@ -1025,12 +1145,15 @@ export type StoreUncheckedUpdateWithoutTaxRulesInput = {
   customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
   domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
 }
 
-export type StoreCreateWithoutPaymentMethodsInput = {
+export type StoreCreateWithoutPaymentGatewayInput = {
   id?: string
   ownerId: string
   name: string
@@ -1047,9 +1170,12 @@ export type StoreCreateWithoutPaymentMethodsInput = {
   taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
-export type StoreUncheckedCreateWithoutPaymentMethodsInput = {
+export type StoreUncheckedCreateWithoutPaymentGatewayInput = {
   id?: string
   ownerId: string
   name: string
@@ -1066,25 +1192,28 @@ export type StoreUncheckedCreateWithoutPaymentMethodsInput = {
   taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
-export type StoreCreateOrConnectWithoutPaymentMethodsInput = {
+export type StoreCreateOrConnectWithoutPaymentGatewayInput = {
   where: Prisma.StoreWhereUniqueInput
-  create: Prisma.XOR<Prisma.StoreCreateWithoutPaymentMethodsInput, Prisma.StoreUncheckedCreateWithoutPaymentMethodsInput>
+  create: Prisma.XOR<Prisma.StoreCreateWithoutPaymentGatewayInput, Prisma.StoreUncheckedCreateWithoutPaymentGatewayInput>
 }
 
-export type StoreUpsertWithoutPaymentMethodsInput = {
-  update: Prisma.XOR<Prisma.StoreUpdateWithoutPaymentMethodsInput, Prisma.StoreUncheckedUpdateWithoutPaymentMethodsInput>
-  create: Prisma.XOR<Prisma.StoreCreateWithoutPaymentMethodsInput, Prisma.StoreUncheckedCreateWithoutPaymentMethodsInput>
+export type StoreUpsertWithoutPaymentGatewayInput = {
+  update: Prisma.XOR<Prisma.StoreUpdateWithoutPaymentGatewayInput, Prisma.StoreUncheckedUpdateWithoutPaymentGatewayInput>
+  create: Prisma.XOR<Prisma.StoreCreateWithoutPaymentGatewayInput, Prisma.StoreUncheckedCreateWithoutPaymentGatewayInput>
   where?: Prisma.StoreWhereInput
 }
 
-export type StoreUpdateToOneWithWhereWithoutPaymentMethodsInput = {
+export type StoreUpdateToOneWithWhereWithoutPaymentGatewayInput = {
   where?: Prisma.StoreWhereInput
-  data: Prisma.XOR<Prisma.StoreUpdateWithoutPaymentMethodsInput, Prisma.StoreUncheckedUpdateWithoutPaymentMethodsInput>
+  data: Prisma.XOR<Prisma.StoreUpdateWithoutPaymentGatewayInput, Prisma.StoreUncheckedUpdateWithoutPaymentGatewayInput>
 }
 
-export type StoreUpdateWithoutPaymentMethodsInput = {
+export type StoreUpdateWithoutPaymentGatewayInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1101,9 +1230,12 @@ export type StoreUpdateWithoutPaymentMethodsInput = {
   taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
-export type StoreUncheckedUpdateWithoutPaymentMethodsInput = {
+export type StoreUncheckedUpdateWithoutPaymentGatewayInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
@@ -1120,6 +1252,9 @@ export type StoreUncheckedUpdateWithoutPaymentMethodsInput = {
   taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutCouponsInput = {
@@ -1137,8 +1272,11 @@ export type StoreCreateWithoutCouponsInput = {
   domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutCouponsInput = {
@@ -1156,8 +1294,11 @@ export type StoreUncheckedCreateWithoutCouponsInput = {
   domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
   collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutCouponsInput = {
@@ -1191,8 +1332,11 @@ export type StoreUpdateWithoutCouponsInput = {
   domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutCouponsInput = {
@@ -1210,8 +1354,11 @@ export type StoreUncheckedUpdateWithoutCouponsInput = {
   domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
   collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreCreateWithoutCollectionsInput = {
@@ -1229,8 +1376,11 @@ export type StoreCreateWithoutCollectionsInput = {
   domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
 }
 
 export type StoreUncheckedCreateWithoutCollectionsInput = {
@@ -1248,8 +1398,11 @@ export type StoreUncheckedCreateWithoutCollectionsInput = {
   domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
   shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
   taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
   coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
 }
 
 export type StoreCreateOrConnectWithoutCollectionsInput = {
@@ -1283,8 +1436,11 @@ export type StoreUpdateWithoutCollectionsInput = {
   domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
 }
 
 export type StoreUncheckedUpdateWithoutCollectionsInput = {
@@ -1302,8 +1458,323 @@ export type StoreUncheckedUpdateWithoutCollectionsInput = {
   domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
   shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
   taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
-  paymentMethods?: Prisma.paymentMethodsUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
   coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
+}
+
+export type StoreCreateWithoutSubscriptionsInput = {
+  id?: string
+  ownerId: string
+  name: string
+  category?: string | null
+  logoUrl?: string | null
+  siteIcon?: string | null
+  mainDomain?: string | null
+  currency?: string
+  createdAt?: Date | string
+  users?: Prisma.UserStoreRoleCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
+  shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
+  taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
+  coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
+  collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
+}
+
+export type StoreUncheckedCreateWithoutSubscriptionsInput = {
+  id?: string
+  ownerId: string
+  name: string
+  category?: string | null
+  logoUrl?: string | null
+  siteIcon?: string | null
+  mainDomain?: string | null
+  currency?: string
+  createdAt?: Date | string
+  users?: Prisma.UserStoreRoleUncheckedCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
+  shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
+  taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
+  coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
+  collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
+}
+
+export type StoreCreateOrConnectWithoutSubscriptionsInput = {
+  where: Prisma.StoreWhereUniqueInput
+  create: Prisma.XOR<Prisma.StoreCreateWithoutSubscriptionsInput, Prisma.StoreUncheckedCreateWithoutSubscriptionsInput>
+}
+
+export type StoreUpsertWithoutSubscriptionsInput = {
+  update: Prisma.XOR<Prisma.StoreUpdateWithoutSubscriptionsInput, Prisma.StoreUncheckedUpdateWithoutSubscriptionsInput>
+  create: Prisma.XOR<Prisma.StoreCreateWithoutSubscriptionsInput, Prisma.StoreUncheckedCreateWithoutSubscriptionsInput>
+  where?: Prisma.StoreWhereInput
+}
+
+export type StoreUpdateToOneWithWhereWithoutSubscriptionsInput = {
+  where?: Prisma.StoreWhereInput
+  data: Prisma.XOR<Prisma.StoreUpdateWithoutSubscriptionsInput, Prisma.StoreUncheckedUpdateWithoutSubscriptionsInput>
+}
+
+export type StoreUpdateWithoutSubscriptionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  siteIcon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainDomain?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  users?: Prisma.UserStoreRoleUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
+  shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
+  taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
+  coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
+  collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
+}
+
+export type StoreUncheckedUpdateWithoutSubscriptionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  siteIcon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainDomain?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  users?: Prisma.UserStoreRoleUncheckedUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
+  shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
+  taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
+  coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
+  collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
+}
+
+export type StoreCreateWithoutMediaInput = {
+  id?: string
+  ownerId: string
+  name: string
+  category?: string | null
+  logoUrl?: string | null
+  siteIcon?: string | null
+  mainDomain?: string | null
+  currency?: string
+  createdAt?: Date | string
+  users?: Prisma.UserStoreRoleCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
+  shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
+  taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
+  coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
+  collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductCreateNestedManyWithoutStoreInput
+}
+
+export type StoreUncheckedCreateWithoutMediaInput = {
+  id?: string
+  ownerId: string
+  name: string
+  category?: string | null
+  logoUrl?: string | null
+  siteIcon?: string | null
+  mainDomain?: string | null
+  currency?: string
+  createdAt?: Date | string
+  users?: Prisma.UserStoreRoleUncheckedCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
+  shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
+  taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
+  coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
+  collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+  products?: Prisma.ProductUncheckedCreateNestedManyWithoutStoreInput
+}
+
+export type StoreCreateOrConnectWithoutMediaInput = {
+  where: Prisma.StoreWhereUniqueInput
+  create: Prisma.XOR<Prisma.StoreCreateWithoutMediaInput, Prisma.StoreUncheckedCreateWithoutMediaInput>
+}
+
+export type StoreUpsertWithoutMediaInput = {
+  update: Prisma.XOR<Prisma.StoreUpdateWithoutMediaInput, Prisma.StoreUncheckedUpdateWithoutMediaInput>
+  create: Prisma.XOR<Prisma.StoreCreateWithoutMediaInput, Prisma.StoreUncheckedCreateWithoutMediaInput>
+  where?: Prisma.StoreWhereInput
+}
+
+export type StoreUpdateToOneWithWhereWithoutMediaInput = {
+  where?: Prisma.StoreWhereInput
+  data: Prisma.XOR<Prisma.StoreUpdateWithoutMediaInput, Prisma.StoreUncheckedUpdateWithoutMediaInput>
+}
+
+export type StoreUpdateWithoutMediaInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  siteIcon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainDomain?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  users?: Prisma.UserStoreRoleUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
+  shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
+  taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
+  coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
+  collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUpdateManyWithoutStoreNestedInput
+}
+
+export type StoreUncheckedUpdateWithoutMediaInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  siteIcon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainDomain?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  users?: Prisma.UserStoreRoleUncheckedUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
+  shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
+  taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
+  coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
+  collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
+  products?: Prisma.ProductUncheckedUpdateManyWithoutStoreNestedInput
+}
+
+export type StoreCreateWithoutProductsInput = {
+  id?: string
+  ownerId: string
+  name: string
+  category?: string | null
+  logoUrl?: string | null
+  siteIcon?: string | null
+  mainDomain?: string | null
+  currency?: string
+  createdAt?: Date | string
+  users?: Prisma.UserStoreRoleCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerCreateNestedManyWithoutStoreInput
+  domains?: Prisma.DomainCreateNestedManyWithoutStoreInput
+  shippingRate?: Prisma.ShippingRateCreateNestedManyWithoutStoreInput
+  taxRules?: Prisma.TaxRulesCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayCreateNestedManyWithoutStoreInput
+  coupons?: Prisma.CouponsCreateNestedManyWithoutStoreInput
+  collections?: Prisma.CollectionCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionCreateNestedManyWithoutStoreInput
+}
+
+export type StoreUncheckedCreateWithoutProductsInput = {
+  id?: string
+  ownerId: string
+  name: string
+  category?: string | null
+  logoUrl?: string | null
+  siteIcon?: string | null
+  mainDomain?: string | null
+  currency?: string
+  createdAt?: Date | string
+  users?: Prisma.UserStoreRoleUncheckedCreateNestedManyWithoutStoreInput
+  customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutStoreInput
+  domains?: Prisma.DomainUncheckedCreateNestedManyWithoutStoreInput
+  shippingRate?: Prisma.ShippingRateUncheckedCreateNestedManyWithoutStoreInput
+  taxRules?: Prisma.TaxRulesUncheckedCreateNestedManyWithoutStoreInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedCreateNestedManyWithoutStoreInput
+  coupons?: Prisma.CouponsUncheckedCreateNestedManyWithoutStoreInput
+  collections?: Prisma.CollectionUncheckedCreateNestedManyWithoutStoreInput
+  media?: Prisma.MediaUncheckedCreateNestedManyWithoutStoreInput
+  subscriptions?: Prisma.SubscriptionUncheckedCreateNestedManyWithoutStoreInput
+}
+
+export type StoreCreateOrConnectWithoutProductsInput = {
+  where: Prisma.StoreWhereUniqueInput
+  create: Prisma.XOR<Prisma.StoreCreateWithoutProductsInput, Prisma.StoreUncheckedCreateWithoutProductsInput>
+}
+
+export type StoreUpsertWithoutProductsInput = {
+  update: Prisma.XOR<Prisma.StoreUpdateWithoutProductsInput, Prisma.StoreUncheckedUpdateWithoutProductsInput>
+  create: Prisma.XOR<Prisma.StoreCreateWithoutProductsInput, Prisma.StoreUncheckedCreateWithoutProductsInput>
+  where?: Prisma.StoreWhereInput
+}
+
+export type StoreUpdateToOneWithWhereWithoutProductsInput = {
+  where?: Prisma.StoreWhereInput
+  data: Prisma.XOR<Prisma.StoreUpdateWithoutProductsInput, Prisma.StoreUncheckedUpdateWithoutProductsInput>
+}
+
+export type StoreUpdateWithoutProductsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  siteIcon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainDomain?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  users?: Prisma.UserStoreRoleUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUpdateManyWithoutStoreNestedInput
+  domains?: Prisma.DomainUpdateManyWithoutStoreNestedInput
+  shippingRate?: Prisma.ShippingRateUpdateManyWithoutStoreNestedInput
+  taxRules?: Prisma.TaxRulesUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUpdateManyWithoutStoreNestedInput
+  coupons?: Prisma.CouponsUpdateManyWithoutStoreNestedInput
+  collections?: Prisma.CollectionUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUpdateManyWithoutStoreNestedInput
+}
+
+export type StoreUncheckedUpdateWithoutProductsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  category?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  siteIcon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainDomain?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  currency?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  users?: Prisma.UserStoreRoleUncheckedUpdateManyWithoutStoreNestedInput
+  customers?: Prisma.CustomerUncheckedUpdateManyWithoutStoreNestedInput
+  domains?: Prisma.DomainUncheckedUpdateManyWithoutStoreNestedInput
+  shippingRate?: Prisma.ShippingRateUncheckedUpdateManyWithoutStoreNestedInput
+  taxRules?: Prisma.TaxRulesUncheckedUpdateManyWithoutStoreNestedInput
+  paymentGateway?: Prisma.PaymentGatewayUncheckedUpdateManyWithoutStoreNestedInput
+  coupons?: Prisma.CouponsUncheckedUpdateManyWithoutStoreNestedInput
+  collections?: Prisma.CollectionUncheckedUpdateManyWithoutStoreNestedInput
+  media?: Prisma.MediaUncheckedUpdateManyWithoutStoreNestedInput
+  subscriptions?: Prisma.SubscriptionUncheckedUpdateManyWithoutStoreNestedInput
 }
 
 
@@ -1317,9 +1788,12 @@ export type StoreCountOutputType = {
   domains: number
   shippingRate: number
   taxRules: number
-  paymentMethods: number
+  paymentGateway: number
   coupons: number
   collections: number
+  media: number
+  subscriptions: number
+  products: number
 }
 
 export type StoreCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1328,9 +1802,12 @@ export type StoreCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.
   domains?: boolean | StoreCountOutputTypeCountDomainsArgs
   shippingRate?: boolean | StoreCountOutputTypeCountShippingRateArgs
   taxRules?: boolean | StoreCountOutputTypeCountTaxRulesArgs
-  paymentMethods?: boolean | StoreCountOutputTypeCountPaymentMethodsArgs
+  paymentGateway?: boolean | StoreCountOutputTypeCountPaymentGatewayArgs
   coupons?: boolean | StoreCountOutputTypeCountCouponsArgs
   collections?: boolean | StoreCountOutputTypeCountCollectionsArgs
+  media?: boolean | StoreCountOutputTypeCountMediaArgs
+  subscriptions?: boolean | StoreCountOutputTypeCountSubscriptionsArgs
+  products?: boolean | StoreCountOutputTypeCountProductsArgs
 }
 
 /**
@@ -1381,8 +1858,8 @@ export type StoreCountOutputTypeCountTaxRulesArgs<ExtArgs extends runtime.Types.
 /**
  * StoreCountOutputType without action
  */
-export type StoreCountOutputTypeCountPaymentMethodsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.paymentMethodsWhereInput
+export type StoreCountOutputTypeCountPaymentGatewayArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PaymentGatewayWhereInput
 }
 
 /**
@@ -1397,6 +1874,27 @@ export type StoreCountOutputTypeCountCouponsArgs<ExtArgs extends runtime.Types.E
  */
 export type StoreCountOutputTypeCountCollectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.CollectionWhereInput
+}
+
+/**
+ * StoreCountOutputType without action
+ */
+export type StoreCountOutputTypeCountMediaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MediaWhereInput
+}
+
+/**
+ * StoreCountOutputType without action
+ */
+export type StoreCountOutputTypeCountSubscriptionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SubscriptionWhereInput
+}
+
+/**
+ * StoreCountOutputType without action
+ */
+export type StoreCountOutputTypeCountProductsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProductWhereInput
 }
 
 
@@ -1415,9 +1913,12 @@ export type StoreSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   domains?: boolean | Prisma.Store$domainsArgs<ExtArgs>
   shippingRate?: boolean | Prisma.Store$shippingRateArgs<ExtArgs>
   taxRules?: boolean | Prisma.Store$taxRulesArgs<ExtArgs>
-  paymentMethods?: boolean | Prisma.Store$paymentMethodsArgs<ExtArgs>
+  paymentGateway?: boolean | Prisma.Store$paymentGatewayArgs<ExtArgs>
   coupons?: boolean | Prisma.Store$couponsArgs<ExtArgs>
   collections?: boolean | Prisma.Store$collectionsArgs<ExtArgs>
+  media?: boolean | Prisma.Store$mediaArgs<ExtArgs>
+  subscriptions?: boolean | Prisma.Store$subscriptionsArgs<ExtArgs>
+  products?: boolean | Prisma.Store$productsArgs<ExtArgs>
   _count?: boolean | Prisma.StoreCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["store"]>
 
@@ -1464,9 +1965,12 @@ export type StoreInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   domains?: boolean | Prisma.Store$domainsArgs<ExtArgs>
   shippingRate?: boolean | Prisma.Store$shippingRateArgs<ExtArgs>
   taxRules?: boolean | Prisma.Store$taxRulesArgs<ExtArgs>
-  paymentMethods?: boolean | Prisma.Store$paymentMethodsArgs<ExtArgs>
+  paymentGateway?: boolean | Prisma.Store$paymentGatewayArgs<ExtArgs>
   coupons?: boolean | Prisma.Store$couponsArgs<ExtArgs>
   collections?: boolean | Prisma.Store$collectionsArgs<ExtArgs>
+  media?: boolean | Prisma.Store$mediaArgs<ExtArgs>
+  subscriptions?: boolean | Prisma.Store$subscriptionsArgs<ExtArgs>
+  products?: boolean | Prisma.Store$productsArgs<ExtArgs>
   _count?: boolean | Prisma.StoreCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type StoreIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1480,9 +1984,12 @@ export type $StorePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     domains: Prisma.$DomainPayload<ExtArgs>[]
     shippingRate: Prisma.$ShippingRatePayload<ExtArgs>[]
     taxRules: Prisma.$TaxRulesPayload<ExtArgs>[]
-    paymentMethods: Prisma.$paymentMethodsPayload<ExtArgs>[]
+    paymentGateway: Prisma.$PaymentGatewayPayload<ExtArgs>[]
     coupons: Prisma.$CouponsPayload<ExtArgs>[]
     collections: Prisma.$CollectionPayload<ExtArgs>[]
+    media: Prisma.$MediaPayload<ExtArgs>[]
+    subscriptions: Prisma.$SubscriptionPayload<ExtArgs>[]
+    products: Prisma.$ProductPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1893,9 +2400,12 @@ export interface Prisma__StoreClient<T, Null = never, ExtArgs extends runtime.Ty
   domains<T extends Prisma.Store$domainsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$domainsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DomainPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   shippingRate<T extends Prisma.Store$shippingRateArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$shippingRateArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ShippingRatePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   taxRules<T extends Prisma.Store$taxRulesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$taxRulesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TaxRulesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  paymentMethods<T extends Prisma.Store$paymentMethodsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$paymentMethodsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$paymentMethodsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  paymentGateway<T extends Prisma.Store$paymentGatewayArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$paymentGatewayArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PaymentGatewayPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   coupons<T extends Prisma.Store$couponsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$couponsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CouponsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   collections<T extends Prisma.Store$collectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$collectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CollectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  media<T extends Prisma.Store$mediaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$mediaArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MediaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  subscriptions<T extends Prisma.Store$subscriptionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$subscriptionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubscriptionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  products<T extends Prisma.Store$productsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Store$productsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2442,27 +2952,27 @@ export type Store$taxRulesArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
- * Store.paymentMethods
+ * Store.paymentGateway
  */
-export type Store$paymentMethodsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Store$paymentGatewayArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the paymentMethods
+   * Select specific fields to fetch from the PaymentGateway
    */
-  select?: Prisma.paymentMethodsSelect<ExtArgs> | null
+  select?: Prisma.PaymentGatewaySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the paymentMethods
+   * Omit specific fields from the PaymentGateway
    */
-  omit?: Prisma.paymentMethodsOmit<ExtArgs> | null
+  omit?: Prisma.PaymentGatewayOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.paymentMethodsInclude<ExtArgs> | null
-  where?: Prisma.paymentMethodsWhereInput
-  orderBy?: Prisma.paymentMethodsOrderByWithRelationInput | Prisma.paymentMethodsOrderByWithRelationInput[]
-  cursor?: Prisma.paymentMethodsWhereUniqueInput
+  include?: Prisma.PaymentGatewayInclude<ExtArgs> | null
+  where?: Prisma.PaymentGatewayWhereInput
+  orderBy?: Prisma.PaymentGatewayOrderByWithRelationInput | Prisma.PaymentGatewayOrderByWithRelationInput[]
+  cursor?: Prisma.PaymentGatewayWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.PaymentMethodsScalarFieldEnum | Prisma.PaymentMethodsScalarFieldEnum[]
+  distinct?: Prisma.PaymentGatewayScalarFieldEnum | Prisma.PaymentGatewayScalarFieldEnum[]
 }
 
 /**
@@ -2511,6 +3021,78 @@ export type Store$collectionsArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.CollectionScalarFieldEnum | Prisma.CollectionScalarFieldEnum[]
+}
+
+/**
+ * Store.media
+ */
+export type Store$mediaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Media
+   */
+  select?: Prisma.MediaSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Media
+   */
+  omit?: Prisma.MediaOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MediaInclude<ExtArgs> | null
+  where?: Prisma.MediaWhereInput
+  orderBy?: Prisma.MediaOrderByWithRelationInput | Prisma.MediaOrderByWithRelationInput[]
+  cursor?: Prisma.MediaWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MediaScalarFieldEnum | Prisma.MediaScalarFieldEnum[]
+}
+
+/**
+ * Store.subscriptions
+ */
+export type Store$subscriptionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Subscription
+   */
+  select?: Prisma.SubscriptionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Subscription
+   */
+  omit?: Prisma.SubscriptionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SubscriptionInclude<ExtArgs> | null
+  where?: Prisma.SubscriptionWhereInput
+  orderBy?: Prisma.SubscriptionOrderByWithRelationInput | Prisma.SubscriptionOrderByWithRelationInput[]
+  cursor?: Prisma.SubscriptionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SubscriptionScalarFieldEnum | Prisma.SubscriptionScalarFieldEnum[]
+}
+
+/**
+ * Store.products
+ */
+export type Store$productsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Product
+   */
+  select?: Prisma.ProductSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Product
+   */
+  omit?: Prisma.ProductOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductInclude<ExtArgs> | null
+  where?: Prisma.ProductWhereInput
+  orderBy?: Prisma.ProductOrderByWithRelationInput | Prisma.ProductOrderByWithRelationInput[]
+  cursor?: Prisma.ProductWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProductScalarFieldEnum | Prisma.ProductScalarFieldEnum[]
 }
 
 /**

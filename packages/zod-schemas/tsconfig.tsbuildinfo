@@ -1,1 +1,1 @@
-{"root":["./src/auth.schema.ts","./src/collections.schema.ts","./src/customers.schema.ts","./src/extra.schema.ts","./src/index.ts","./src/store.schema.ts"],"version":"5.9.2"}
+{"root":["./src/auth.schema.ts","./src/collections.schema.ts","./src/customers.schema.ts","./src/extra.schema.ts","./src/index.ts","./src/media.schema.ts","./src/store.schema.ts"],"version":"5.9.2"}
