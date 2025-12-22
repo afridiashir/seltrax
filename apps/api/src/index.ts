@@ -19,7 +19,7 @@ app.use(
       "https://seltrax.com",    // Production
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization","x-store-id"],
     credentials: true,
   })
 );

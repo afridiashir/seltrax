@@ -21,6 +21,7 @@ import { Moon, Sun, Search, LogOut, User, Settings } from "lucide-react"
 import { useState } from "react"
 import { useTheme } from "next-themes" // works in Vite too if installed
 import { useAuthStore } from "@/stores/auth.store";
+import { StoreSwitcher } from "./ProjectSwitch"
 
 const Header = () => {
   const [openSearch, setOpenSearch] = useState(false)
@@ -31,7 +32,7 @@ const Header = () => {
   return (
     <>
       {/* HEADER BAR */}
-      <header className="flex items-center justify-between border-b gap-2 bg-background px-8 py-2">
+      <header className="bg-white flex items-center justify-between border-b gap-2 bg-background px-8 py-2">
 
         {/* LEFT */}
         <div className="flex items-center gap-2">
@@ -47,10 +48,7 @@ const Header = () => {
 
         {/* RIGHT */}
         <div className="flex items-center gap-2">
-
-          {/* SEARCH BUTTON */}
-
-
+          <StoreSwitcher />
           {/* THEME TOGGLE */}
           <Button
             variant="outline"

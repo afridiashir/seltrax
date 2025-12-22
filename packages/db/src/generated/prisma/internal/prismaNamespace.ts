@@ -1915,6 +1915,9 @@ export const CustomerScalarFieldEnum = {
   city: 'city',
   country: 'country',
   zipCode: 'zipCode',
+  emailMarketing: 'emailMarketing',
+  smsMarketing: 'smsMarketing',
+  note: 'note',
   createdAt: 'createdAt'
 } as const
 

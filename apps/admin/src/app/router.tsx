@@ -7,6 +7,7 @@ import homeRoutes from "@/features/home/home.routes";
 import RootRedirect from "@/app/RootRedirect";
 import NotFound from "./NotFound";
 import storeRoutes from "@/features/store/store.routes";
+import customerRoutes from "@/features/customers/customers.routes";
 
 export const router = createBrowserRouter([
   ...authRoutes,
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       },
       ...homeRoutes,
       ...productRoutes,
+      ...customerRoutes,
       {
         path: "*",
         element: <NotFound />,

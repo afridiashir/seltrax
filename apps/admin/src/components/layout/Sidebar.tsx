@@ -13,6 +13,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { Link } from "react-router-dom"
+import { StoreSwitcher } from "./ProjectSwitch";
 // Menu items.
 const items = [
   {
@@ -32,7 +33,7 @@ const items = [
   },
   {
     title: "Customers",
-    url: "#",
+    url: "/customers",
     icon: User,
   },
   {

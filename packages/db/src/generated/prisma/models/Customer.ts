@@ -36,6 +36,9 @@ export type CustomerMinAggregateOutputType = {
   city: string | null
   country: string | null
   zipCode: string | null
+  emailMarketing: boolean | null
+  smsMarketing: boolean | null
+  note: string | null
   createdAt: Date | null
 }
 
@@ -51,6 +54,9 @@ export type CustomerMaxAggregateOutputType = {
   city: string | null
   country: string | null
   zipCode: string | null
+  emailMarketing: boolean | null
+  smsMarketing: boolean | null
+  note: string | null
   createdAt: Date | null
 }
 
@@ -66,6 +72,9 @@ export type CustomerCountAggregateOutputType = {
   city: number
   country: number
   zipCode: number
+  emailMarketing: number
+  smsMarketing: number
+  note: number
   createdAt: number
   _all: number
 }
@@ -83,6 +92,9 @@ export type CustomerMinAggregateInputType = {
   city?: true
   country?: true
   zipCode?: true
+  emailMarketing?: true
+  smsMarketing?: true
+  note?: true
   createdAt?: true
 }
 
@@ -98,6 +110,9 @@ export type CustomerMaxAggregateInputType = {
   city?: true
   country?: true
   zipCode?: true
+  emailMarketing?: true
+  smsMarketing?: true
+  note?: true
   createdAt?: true
 }
 
@@ -113,6 +128,9 @@ export type CustomerCountAggregateInputType = {
   city?: true
   country?: true
   zipCode?: true
+  emailMarketing?: true
+  smsMarketing?: true
+  note?: true
   createdAt?: true
   _all?: true
 }
@@ -201,6 +219,9 @@ export type CustomerGroupByOutputType = {
   city: string | null
   country: string | null
   zipCode: string | null
+  emailMarketing: boolean | null
+  smsMarketing: boolean | null
+  note: string | null
   createdAt: Date
   _count: CustomerCountAggregateOutputType | null
   _min: CustomerMinAggregateOutputType | null
@@ -237,6 +258,9 @@ export type CustomerWhereInput = {
   city?: Prisma.StringNullableFilter<"Customer"> | string | null
   country?: Prisma.StringNullableFilter<"Customer"> | string | null
   zipCode?: Prisma.StringNullableFilter<"Customer"> | string | null
+  emailMarketing?: Prisma.BoolNullableFilter<"Customer"> | boolean | null
+  smsMarketing?: Prisma.BoolNullableFilter<"Customer"> | boolean | null
+  note?: Prisma.StringNullableFilter<"Customer"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
   store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }
@@ -253,6 +277,9 @@ export type CustomerOrderByWithRelationInput = {
   city?: Prisma.SortOrderInput | Prisma.SortOrder
   country?: Prisma.SortOrderInput | Prisma.SortOrder
   zipCode?: Prisma.SortOrderInput | Prisma.SortOrder
+  emailMarketing?: Prisma.SortOrderInput | Prisma.SortOrder
+  smsMarketing?: Prisma.SortOrderInput | Prisma.SortOrder
+  note?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   store?: Prisma.StoreOrderByWithRelationInput
 }
@@ -273,6 +300,9 @@ export type CustomerWhereUniqueInput = Prisma.AtLeast<{
   city?: Prisma.StringNullableFilter<"Customer"> | string | null
   country?: Prisma.StringNullableFilter<"Customer"> | string | null
   zipCode?: Prisma.StringNullableFilter<"Customer"> | string | null
+  emailMarketing?: Prisma.BoolNullableFilter<"Customer"> | boolean | null
+  smsMarketing?: Prisma.BoolNullableFilter<"Customer"> | boolean | null
+  note?: Prisma.StringNullableFilter<"Customer"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
   store?: Prisma.XOR<Prisma.StoreScalarRelationFilter, Prisma.StoreWhereInput>
 }, "id" | "storeId_phone">
@@ -289,6 +319,9 @@ export type CustomerOrderByWithAggregationInput = {
   city?: Prisma.SortOrderInput | Prisma.SortOrder
   country?: Prisma.SortOrderInput | Prisma.SortOrder
   zipCode?: Prisma.SortOrderInput | Prisma.SortOrder
+  emailMarketing?: Prisma.SortOrderInput | Prisma.SortOrder
+  smsMarketing?: Prisma.SortOrderInput | Prisma.SortOrder
+  note?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.CustomerCountOrderByAggregateInput
   _max?: Prisma.CustomerMaxOrderByAggregateInput
@@ -310,6 +343,9 @@ export type CustomerScalarWhereWithAggregatesInput = {
   city?: Prisma.StringNullableWithAggregatesFilter<"Customer"> | string | null
   country?: Prisma.StringNullableWithAggregatesFilter<"Customer"> | string | null
   zipCode?: Prisma.StringNullableWithAggregatesFilter<"Customer"> | string | null
+  emailMarketing?: Prisma.BoolNullableWithAggregatesFilter<"Customer"> | boolean | null
+  smsMarketing?: Prisma.BoolNullableWithAggregatesFilter<"Customer"> | boolean | null
+  note?: Prisma.StringNullableWithAggregatesFilter<"Customer"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Customer"> | Date | string
 }
 
@@ -324,6 +360,9 @@ export type CustomerCreateInput = {
   city?: string | null
   country?: string | null
   zipCode?: string | null
+  emailMarketing?: boolean | null
+  smsMarketing?: boolean | null
+  note?: string | null
   createdAt?: Date | string
   store: Prisma.StoreCreateNestedOneWithoutCustomersInput
 }
@@ -340,6 +379,9 @@ export type CustomerUncheckedCreateInput = {
   city?: string | null
   country?: string | null
   zipCode?: string | null
+  emailMarketing?: boolean | null
+  smsMarketing?: boolean | null
+  note?: string | null
   createdAt?: Date | string
 }
 
@@ -354,6 +396,9 @@ export type CustomerUpdateInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   zipCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  emailMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  smsMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   store?: Prisma.StoreUpdateOneRequiredWithoutCustomersNestedInput
 }
@@ -370,6 +415,9 @@ export type CustomerUncheckedUpdateInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   zipCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  emailMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  smsMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -385,6 +433,9 @@ export type CustomerCreateManyInput = {
   city?: string | null
   country?: string | null
   zipCode?: string | null
+  emailMarketing?: boolean | null
+  smsMarketing?: boolean | null
+  note?: string | null
   createdAt?: Date | string
 }
 
@@ -399,6 +450,9 @@ export type CustomerUpdateManyMutationInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   zipCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  emailMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  smsMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -414,6 +468,9 @@ export type CustomerUncheckedUpdateManyInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   zipCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  emailMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  smsMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -444,6 +501,9 @@ export type CustomerCountOrderByAggregateInput = {
   city?: Prisma.SortOrder
   country?: Prisma.SortOrder
   zipCode?: Prisma.SortOrder
+  emailMarketing?: Prisma.SortOrder
+  smsMarketing?: Prisma.SortOrder
+  note?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -459,6 +519,9 @@ export type CustomerMaxOrderByAggregateInput = {
   city?: Prisma.SortOrder
   country?: Prisma.SortOrder
   zipCode?: Prisma.SortOrder
+  emailMarketing?: Prisma.SortOrder
+  smsMarketing?: Prisma.SortOrder
+  note?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -474,6 +537,9 @@ export type CustomerMinOrderByAggregateInput = {
   city?: Prisma.SortOrder
   country?: Prisma.SortOrder
   zipCode?: Prisma.SortOrder
+  emailMarketing?: Prisma.SortOrder
+  smsMarketing?: Prisma.SortOrder
+  note?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -519,6 +585,10 @@ export type CustomerUncheckedUpdateManyWithoutStoreNestedInput = {
   deleteMany?: Prisma.CustomerScalarWhereInput | Prisma.CustomerScalarWhereInput[]
 }
 
+export type NullableBoolFieldUpdateOperationsInput = {
+  set?: boolean | null
+}
+
 export type CustomerCreateWithoutStoreInput = {
   id?: string
   firstName: string
@@ -530,6 +600,9 @@ export type CustomerCreateWithoutStoreInput = {
   city?: string | null
   country?: string | null
   zipCode?: string | null
+  emailMarketing?: boolean | null
+  smsMarketing?: boolean | null
+  note?: string | null
   createdAt?: Date | string
 }
 
@@ -544,6 +617,9 @@ export type CustomerUncheckedCreateWithoutStoreInput = {
   city?: string | null
   country?: string | null
   zipCode?: string | null
+  emailMarketing?: boolean | null
+  smsMarketing?: boolean | null
+  note?: string | null
   createdAt?: Date | string
 }
 
@@ -588,6 +664,9 @@ export type CustomerScalarWhereInput = {
   city?: Prisma.StringNullableFilter<"Customer"> | string | null
   country?: Prisma.StringNullableFilter<"Customer"> | string | null
   zipCode?: Prisma.StringNullableFilter<"Customer"> | string | null
+  emailMarketing?: Prisma.BoolNullableFilter<"Customer"> | boolean | null
+  smsMarketing?: Prisma.BoolNullableFilter<"Customer"> | boolean | null
+  note?: Prisma.StringNullableFilter<"Customer"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
 }
 
@@ -602,6 +681,9 @@ export type CustomerCreateManyStoreInput = {
   city?: string | null
   country?: string | null
   zipCode?: string | null
+  emailMarketing?: boolean | null
+  smsMarketing?: boolean | null
+  note?: string | null
   createdAt?: Date | string
 }
 
@@ -616,6 +698,9 @@ export type CustomerUpdateWithoutStoreInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   zipCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  emailMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  smsMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -630,6 +715,9 @@ export type CustomerUncheckedUpdateWithoutStoreInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   zipCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  emailMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  smsMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -644,6 +732,9 @@ export type CustomerUncheckedUpdateManyWithoutStoreInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   zipCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  emailMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  smsMarketing?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
+  note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -661,6 +752,9 @@ export type CustomerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   city?: boolean
   country?: boolean
   zipCode?: boolean
+  emailMarketing?: boolean
+  smsMarketing?: boolean
+  note?: boolean
   createdAt?: boolean
   store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["customer"]>
@@ -677,6 +771,9 @@ export type CustomerSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   city?: boolean
   country?: boolean
   zipCode?: boolean
+  emailMarketing?: boolean
+  smsMarketing?: boolean
+  note?: boolean
   createdAt?: boolean
   store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["customer"]>
@@ -693,6 +790,9 @@ export type CustomerSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   city?: boolean
   country?: boolean
   zipCode?: boolean
+  emailMarketing?: boolean
+  smsMarketing?: boolean
+  note?: boolean
   createdAt?: boolean
   store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["customer"]>
@@ -709,10 +809,13 @@ export type CustomerSelectScalar = {
   city?: boolean
   country?: boolean
   zipCode?: boolean
+  emailMarketing?: boolean
+  smsMarketing?: boolean
+  note?: boolean
   createdAt?: boolean
 }
 
-export type CustomerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "firstName" | "lastName" | "email" | "phone" | "address" | "state" | "city" | "country" | "zipCode" | "createdAt", ExtArgs["result"]["customer"]>
+export type CustomerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "storeId" | "firstName" | "lastName" | "email" | "phone" | "address" | "state" | "city" | "country" | "zipCode" | "emailMarketing" | "smsMarketing" | "note" | "createdAt", ExtArgs["result"]["customer"]>
 export type CustomerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   store?: boolean | Prisma.StoreDefaultArgs<ExtArgs>
 }
@@ -740,6 +843,9 @@ export type $CustomerPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     city: string | null
     country: string | null
     zipCode: string | null
+    emailMarketing: boolean | null
+    smsMarketing: boolean | null
+    note: string | null
     createdAt: Date
   }, ExtArgs["result"]["customer"]>
   composites: {}
@@ -1176,6 +1282,9 @@ export interface CustomerFieldRefs {
   readonly city: Prisma.FieldRef<"Customer", 'String'>
   readonly country: Prisma.FieldRef<"Customer", 'String'>
   readonly zipCode: Prisma.FieldRef<"Customer", 'String'>
+  readonly emailMarketing: Prisma.FieldRef<"Customer", 'Boolean'>
+  readonly smsMarketing: Prisma.FieldRef<"Customer", 'Boolean'>
+  readonly note: Prisma.FieldRef<"Customer", 'String'>
   readonly createdAt: Prisma.FieldRef<"Customer", 'DateTime'>
 }
     

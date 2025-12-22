@@ -60,18 +60,21 @@ enum Role {
 // Customers
 
 model Customer {
-  id        String   @id @default(uuid())
-  storeId   String
-  firstName String
-  lastName  String
-  email     String
-  phone     String?
-  address   String?
-  state     String?
-  city      String?
-  country   String?
-  zipCode   String?
-  createdAt DateTime @default(now())
+  id             String   @id @default(uuid())
+  storeId        String
+  firstName      String
+  lastName       String
+  email          String
+  phone          String?
+  address        String?
+  state          String?
+  city           String?
+  country        String?
+  zipCode        String?
+  emailMarketing Boolean? @default(false)
+  smsMarketing   Boolean? @default(false)
+  note           String?
+  createdAt      DateTime @default(now())
 
   store Store @relation(fields: [storeId], references: [id])
 
