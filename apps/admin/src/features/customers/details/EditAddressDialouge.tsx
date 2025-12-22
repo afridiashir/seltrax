@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Field, FieldContent, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useNavigate } from "react-router-dom";
 
 interface EditAddressDialogProps {

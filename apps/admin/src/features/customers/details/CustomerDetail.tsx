@@ -4,13 +4,9 @@ import { useEffect, useState } from "react";
 import { CustomerSchemaType } from "@repo/zod-schemas";
 import { toast } from "sonner";
 
-import { NoteDialouge } from "../create/NoteDialouge";
-import { Button } from "@/components/ui/button";
-import { ArrowDown, ChevronDown, Edit, Info, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { User } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Field, FieldContent, FieldLabel } from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
 import { timeAgo } from "@/lib/helper";
 import { Checkbox } from "@/components/ui/checkbox";
 import { NoteEditDialouge } from "./NoteEdit";
