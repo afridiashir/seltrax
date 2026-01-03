@@ -16,12 +16,25 @@ export const domainCreateSchema =  z.object({
 
 export type DomainInput = z.infer<typeof domainCreateSchema>;
 
+
 export const domainUpdateSchema = z.object({
     isPrimary: z.boolean().optional(),
     status: z.enum(["PENDING", "VERIFIED","ACTIVE","FAILED"]).optional(),
 });
 
 export type DomainUpdateInput = z.infer<typeof domainUpdateSchema>;
+
+export const domainSchemaType = z.object({
+  id: z.string(),
+  storeId: z.string(),
+  domain : z.string(),
+  isPrimary : z.string().optional(),
+  status: z.string().optional(),
+  lastChecked : z.date().optional(),
+  createdAt : z.date().optional()
+});
+
+export type DomainSchemaType = z.infer<typeof domainSchemaType>;
 
 // Shipping Schemas 
 

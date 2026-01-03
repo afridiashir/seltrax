@@ -15,3 +15,13 @@ export const storeUpdateSchema = z.object({
 })
 
 export type StoreUpdateInput = z.infer<typeof storeUpdateSchema>;
+
+export const storeUserSchemaType = z.object({
+  id : z.string(),
+  name : z.string(),
+  email : z.string(),
+  role : z.string(),
+  createdAt: z.string()
+})
+
+export type StoreUserSchemaType = z.infer<typeof storeUserSchemaType>;

@@ -88,15 +88,15 @@ export const CustomerNew = () => {
         <div className="px-4 md:px-64">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <Link to="/customers"><User className="w-10 h-10 hover:bg-gray-200 cursor-pointer rounded-md p-2" /> </Link>{"> "}
+                    <Link to="/customers"><User className="w-10 h-10 hover:bg-muted cursor-pointer rounded-md p-2" /> </Link>{"> "}
                     <h2 className="font-medium">New Customer</h2>
                 </div>
             </div>
 
-            <div className="mt-4 border shadow-xs bg-white rounded-md h-12 w-full flex items-center justify-between gap-2 px-4">
+            <div className="mt-4 border shadow-xs bg-card rounded-md h-12 w-full flex items-center justify-between gap-2 px-4">
                 <div className="flex items-center gap-2">
                     <Info className="w-3 h-3" />
-                    <p className="font-medium text-sm text-gray-600">
+                    <p className="font-medium text-sm text-card-foreground">
                         Unsaved Changes
                     </p>
                 </div>
@@ -123,16 +123,16 @@ export const CustomerNew = () => {
             <div className="flex gap-4">
                 {/* ---------------- Left Card ---------------- */}
                 <div className="w-2/3">
-                    <Card className="mt-4 p-0 gap-0 ">
+                    <Card className="mt-4 p-0 gap-0 overflow-hidden ">
                         <CardHeader className="p-0  gap-0">
-                            <CardTitle className="font-medium text-black border-b p-4 m-0 text-sm">
+                            <CardTitle className="font-medium text-foreground border-b p-4 m-0 text-sm">
                                 Overview
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="px-4 pb-4">
                             <div className="flex gap-4 mt-4">
                                 <Field>
-                                    <FieldLabel className="text-gray-700">First Name</FieldLabel>
+                                    <FieldLabel >First Name</FieldLabel>
                                     <FieldContent>
                                         <Input
                                             name="firstName"
@@ -144,7 +144,7 @@ export const CustomerNew = () => {
                                 </Field>
 
                                 <Field>
-                                    <FieldLabel className="text-gray-700">Last Name</FieldLabel>
+                                    <FieldLabel >Last Name</FieldLabel>
                                     <FieldContent>
                                         <Input
                                             name="lastName"
@@ -157,7 +157,7 @@ export const CustomerNew = () => {
                             </div>
 
                             <Field className="mt-4">
-                                <FieldLabel className="text-gray-700">Email</FieldLabel>
+                                <FieldLabel >Email</FieldLabel>
                                 <FieldContent>
                                     <Input
                                         name="email"
@@ -169,7 +169,7 @@ export const CustomerNew = () => {
                             </Field>
 
                             <Field className="mt-4">
-                                <FieldLabel className="text-gray-700">Phone</FieldLabel>
+                                <FieldLabel >Phone</FieldLabel>
                                 <FieldContent>
                                     <Input
                                         name="phone"
@@ -187,7 +187,7 @@ export const CustomerNew = () => {
                                     }
                                 />
 
-                                <FieldLabel className="text-gray-700">
+                                <FieldLabel >
                                     Customer agreed to receive marketing emails
                                 </FieldLabel>
                             </Field>
@@ -199,25 +199,25 @@ export const CustomerNew = () => {
                                     }
                                 />
 
-                                <FieldLabel className="text-gray-700">
+                                <FieldLabel >
                                     Customer agreed to receive SMS marketing text messages
                                 </FieldLabel>
                             </Field>
                         </CardContent>
-                        <CardFooter className="bg-gray-100 p-4 py-6 text-xs text-gray-600">
+                        <CardFooter className="bg-background p-4 py-6 text-xs text-muted-foreground">
                             You should ask your customers for permission before you subscribe them to your marketing emails or SMS.
                         </CardFooter>
                     </Card>
 
                     <Card className="mt-4 p-0 gap-0 mb-16">
                         <CardHeader className="p-0  gap-0">
-                            <CardTitle className="font-medium text-black border-b p-4 m-0 text-sm">
+                            <CardTitle className="font-medium border-b p-4 m-0 text-sm">
                                 Default address
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="px-4 pb-4">
                             <Field className="mt-4">
-                                <FieldLabel className="text-gray-700 text-sm">
+                                <FieldLabel className="">
                                     Address
                                 </FieldLabel>
                                 <FieldContent>
@@ -231,7 +231,7 @@ export const CustomerNew = () => {
                             </Field>
 
                             <Field className="mt-4">
-                                <FieldLabel className="text-gray-700 text-sm">
+                                <FieldLabel >
                                     City
                                 </FieldLabel>
                                 <FieldContent>
@@ -245,7 +245,7 @@ export const CustomerNew = () => {
                             </Field>
 
                             <Field className="mt-4">
-                                <FieldLabel className="text-gray-700 text-sm">
+                                <FieldLabel >
                                     State
                                 </FieldLabel>
                                 <FieldContent>
@@ -259,7 +259,7 @@ export const CustomerNew = () => {
                             </Field>
 
                             <Field className="mt-4">
-                                <FieldLabel className="text-gray-700 text-sm">
+                                <FieldLabel >
                                     Zip Code
                                 </FieldLabel>
                                 <FieldContent>
@@ -280,16 +280,16 @@ export const CustomerNew = () => {
                 <div className="w-1/3">
                     <Card className="mt-4 p-0 gap-0 mb-16">
                         <CardHeader className="p-0  gap-0">
-                            <CardTitle className="font-medium text-black border-b p-4 py-2 m-0 text-sm flex items-center justify-between">
+                            <CardTitle className="font-medium border-b p-4 py-2 m-0 text-sm flex items-center justify-between">
                                 Notes
                                 <NoteDialouge note={note} setNote={setNote} />
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="px-4 py-4">
                             {note ? (
-                                <p className="text-sm text-black">{note}</p>
+                                <p className="text-sm ">{note}</p>
                             ) : (
-                                <p className="text-sm text-gray-500">Notes are private and won't be shared with the customer.</p>
+                                <p className="text-sm text-muted-foreground">Notes are private and won't be shared with the customer.</p>
                             )}
                         </CardContent>
                     </Card>

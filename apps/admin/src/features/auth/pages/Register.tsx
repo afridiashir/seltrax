@@ -62,7 +62,7 @@ const Register = () => {
   };
 
   return (
-    <div className="h-screen flex items-center bg-gray-100 justify-center">
+    <div className="h-screen flex items-center bg-background justify-center">
       <Card className="w-[400px] py-6">
         <CardHeader>
           <CardTitle className="font-semibold">
@@ -80,20 +80,21 @@ const Register = () => {
         <CardContent>
           {/* SOCIAL LOGIN */}
           <div className="flex gap-4 mt-2">
-            <button
+            <Button
               disabled
+              variant={'outline'}
               title="Coming Soon!"
-              className="w-full bg-gray-100 p-2 rounded-md hover:bg-gray-200 flex items-center gap-3 justify-center"
+              className="w-full bg-background p-2 rounded-md hover:muted flex items-center gap-3 justify-center"
             >
               <img
                 src="/Google__G__logo.svg.png"
                 className="w-5 h-5"
               />
               Google
-            </button>
+            </Button>
           </div>
 
-          <p className="text-center py-4 text-gray-500">
+          <p className="text-center py-4 text-muted-foreground">
             or using email and password
           </p>
 
@@ -158,7 +159,7 @@ const Register = () => {
             </Button>
           </form>
 
-          <p className="mt-3 text-gray-500 text-[11px]">
+          <p className="mt-3 text-muted-foreground text-xs">
             By signing up, you agree to the Terms & Conditions and Privacy Policy.
           </p>
         </CardContent>

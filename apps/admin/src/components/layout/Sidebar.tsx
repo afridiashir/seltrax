@@ -1,4 +1,4 @@
-import { Calendar, ChartLine, CirclePercent, CirclePlus, CircleQuestionMark, Facebook, Home, Images, Inbox, Landmark, Package, ScanBarcode, Search, Settings, SettingsIcon, ShoppingBag, User } from "lucide-react"
+import { Calendar, ChartLine, CirclePercent, CirclePlus, CircleQuestionMark, Facebook, Home, Images, Inbox, Landmark, Package, PlugIcon, ScanBarcode, Search, Settings, SettingsIcon, ShoppingBag, User } from "lucide-react"
 
 import {
   Sidebar,
@@ -12,8 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Link } from "react-router-dom"
-import { StoreSwitcher } from "./ProjectSwitch";
+import { Link, NavLink } from "react-router-dom"
 // Menu items.
 const items = [
   {
@@ -23,7 +22,7 @@ const items = [
   },
   {
     title: "Orders",
-    url: "#",
+    url: "/orders",
     icon: Inbox,
   },
   {
@@ -52,55 +51,52 @@ const items = [
     icon: Landmark,
   },
   {
-    title: "Analytics",
-    url: "/analytics",
+    title: "Reports",
+    url: "/reports",
     icon: ChartLine,
   },
 ];
 
 const channels = [
   {
-    title: "Online Store",
-    url: "/store",
+    title: "Store Front",
+    url: "/website",
     icon: ShoppingBag,
   },
-  {
-    title: "Point of Sales",
-    url: "/pos",
-    icon: ScanBarcode,
-  },
+  // {
+  //   title: "Point of Sales",
+  //   url: "/pos",
+  //   icon: ScanBarcode,
+  // },
 ];
 
 const apps = [
   {
-    title: "Pixel",
-    url: "/pixel",
-    icon: Facebook,
+    title: "Whatsapp",
+    url: "/whatsapp",
+    icon: PlugIcon,
   },
   {
-    title: "Integrate App",
+    title: "Add an app",
     url: "/apps",
     icon: CirclePlus,
   },
 ];
 export function AppSidebar() {
   return (
-    <Sidebar variant="sidebar" collapsible="offcanvas">
-      <SidebarHeader className="flex items-center flex-row p-3 gap-1"><img src="/Seltrax.png" alt="" className="w-8 h-8" /><h1 className="text-foreground font-medium text-2xl">Seltrax</h1></SidebarHeader>
+    <Sidebar variant={"sidebar"} collapsible="offcanvas" className="relative max-h-[calc(100vh-55px)]">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarGroupLabel>Menu</SidebarGroupLabel>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link to={item.url} replace>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+                <SidebarLink
+                  key={item.title}
+                  to={item.url}
+                  icon={item.icon}
+                  label={item.title}
+                />
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
@@ -108,17 +104,15 @@ export function AppSidebar() {
 
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarGroupLabel>Sales Channels</SidebarGroupLabel>
+            <SidebarGroupLabel>Website</SidebarGroupLabel>
             <SidebarMenu>
               {channels.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link to={item.url} replace>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+                <SidebarLink
+                  key={item.title}
+                  to={item.url}
+                  icon={item.icon}
+                  label={item.title}
+                />
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
@@ -146,26 +140,30 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              <SidebarMenuItem >
-                <SidebarMenuButton asChild>
-                  <Link to={'#'} replace>
-                    <SettingsIcon />
-                    <span>Settings</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem >
-                <SidebarMenuButton asChild>
-                  <Link to={'#'} replace>
-                    <CircleQuestionMark />
-                    <span>Help</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
+              <SidebarLink to="/settings/general" icon={SettingsIcon} label="Settings" />
+              <SidebarLink to="/help" icon={CircleQuestionMark} label="Help" />
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
+  )
+}
+
+const SidebarLink = ({ to, icon: Icon, label }: any) => {
+  return (
+    <NavLink to={to}>
+      {({ isActive }) => (
+        <SidebarMenuItem>
+          <SidebarMenuButton
+            data-active={isActive}
+            className="data-[active=true]:bg-muted data-[active=true]:text-foreground cursor-pointer"
+          >
+            <Icon />
+            <span>{label}</span>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      )}
+    </NavLink>
   )
 }

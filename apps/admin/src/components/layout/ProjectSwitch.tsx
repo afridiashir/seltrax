@@ -26,12 +26,12 @@ export const StoreSwitcher: React.FC = () => {
     return (
         <DropdownMenu >
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="flex items-center justify-between gap-2 mx-3 font-normal">
+                <Button variant="outline" className="flex items-center justify-between gap-2 shadow-xs font-normal">
                     <div className="flex items-center gap-2">
                         <StoreIcon className="h-6 w-6" />
-                        {activeStore?.name ?? "Select Store"}
+                        <span className="hidden md:block">{activeStore?.name ?? "Select Store"}</span>
                     </div>
-                    <ChevronDown className="h-6 w-6 opacity-60" />
+                    <ChevronDown className="h-6 w-6 opacity-60 hidden md:block" />
                 </Button>
             </DropdownMenuTrigger>
 

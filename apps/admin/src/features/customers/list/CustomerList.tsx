@@ -55,7 +55,7 @@ const sortOptions = [
   // }
 ];
 
-const LIMIT = 10;
+const LIMIT = 25;
 
 const CustomerList = () => {
   const api = useApiWithStore();
@@ -123,14 +123,14 @@ const CustomerList = () => {
             <div className="flex flex-col md:flex-row px-4 md:px-32 py-4 md:py-32  items-center">
               <div className="flex flex-col">
                 <h3 className="text-xl md:text-3xl">Everything Customers Related in One Place</h3>
-                <p className="text-sm md:text-base text-gray-600 mt-2">Manage customer details, see customer order history, and group customers into segments.</p>
+                <p className="text-sm md:text-base text-muted-foreground mt-2">Manage customer details, see customer order history, and group customers into segments.</p>
                 <div className="flex gap-4 mt-4">
                   <Link to={'/customers/new'}><Button >Add Customer</Button></Link>
                   <Button variant="secondary">Import</Button>
                 </div>
               </div>
               <div className="w-full md:w-1/3 mt-8 md:mt-0">
-                <img src="/customers.png" alt="" />
+                <img src="/customers.png" className="mix-blend-multiply" alt="" />
               </div>
             </div>
           </CardContent>
@@ -149,14 +149,14 @@ const CustomerList = () => {
         </div>
 
         <div className="flex gap-2">
-          <Button variant="secondary">Export</Button>
-          <Button variant="secondary">Import</Button>
-          <Link to={'/customers/new'}><Button>Add Customer</Button></Link>
+          <Button variant="secondary" size={'sm'}>Export</Button>
+          <Button variant="secondary" size={'sm'}>Import</Button>
+          <Link to={'/customers/new'}><Button variant={"default"} size={'sm'}>Add Customer</Button></Link>
         </div>
       </div>
 
       {/* Info */}
-      <Card className="mt-4 p-4 gap-0 text-sm text-gray-800">
+      <Card className="mt-4 p-4 gap-0 text-sm text-foreground">
         <CardHeader className="m-0 p-0 gap-0 flex items-center gap-4">
           <p className="flex items-center gap-2">{loading ? <Skeleton className="w-8 h-4" /> : total} Customers</p>
           <p>|</p>
@@ -168,7 +168,7 @@ const CustomerList = () => {
       <Card className="mt-4 p-0 gap-0">
         <CardHeader className="m-0 p-0 gap-0 flex flex-row items-center justify-between p-3 text-sm">
           <div className="w-full flex items-center gap-2 rounded-md px-2">
-            <Search className="w-4 h-4 text-gray-600" />
+            <Search className="w-4 h-4 text-foreground" />
             <input
               type="text"
               value={search}
@@ -177,14 +177,14 @@ const CustomerList = () => {
                 setPage(1); // reset page on search
               }}
               placeholder="Search customer by email, phone or name..."
-              className="w-full text-gray-600 outline-none"
+              className="w-full text-foreground outline-none"
             />
           </div>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon" className="w-7 h-7">
-                <ArrowUpDown className="w-4 h-4 text-gray-600" />
+                <ArrowUpDown className="w-4 h-4 foreground" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="text-sm">
@@ -235,7 +235,7 @@ const CustomerList = () => {
             disabled={page === 1}
             onClick={() => setPage((p) => p - 1)}
           >
-            <ArrowLeft className="w-4 h-4 text-gray-600" />
+            <ArrowLeft className="w-4 h-4 text-foreground" />
           </Button>
 
           <Button
@@ -244,10 +244,10 @@ const CustomerList = () => {
             disabled={page === totalPages || totalPages === 0}
             onClick={() => setPage((p) => p + 1)}
           >
-            <ArrowRight className="w-4 h-4 text-gray-600" />
+            <ArrowRight className="w-4 h-4 text-foreground" />
           </Button>
 
-          <p className="text-gray-600">
+          <p className="text-foreground">
             Page {page} of {totalPages || 1}
           </p>
         </CardFooter>

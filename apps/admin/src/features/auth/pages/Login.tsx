@@ -16,6 +16,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import axios from "axios";
 import { useStoresStore } from "@/stores/store.store";
+import { AuthHeader } from "./AuthHeader";
 
 const Login = () => {
   const login = useAuthStore((s: any) => s.login);
@@ -100,7 +101,9 @@ const Login = () => {
   };
 
   return (
-    <div className="h-screen flex items-center bg-gray-100 justify-center">
+
+    <div className="h-screen flex items-center bg-background justify-center">
+      <AuthHeader />
       <Card className="w-[400px]">
         <CardHeader>
           <CardTitle className="font-semibold">
@@ -118,20 +121,21 @@ const Login = () => {
         <CardContent>
           {/* SOCIAL LOGIN */}
           <div className="flex gap-4">
-            <button
+            <Button
               disabled
+              variant={'outline'}
               title="Coming Soon!"
-              className="w-full bg-gray-100 p-2 rounded-md hover:bg-gray-200 flex items-center gap-3 justify-center"
+              className="w-full bg-background p-2 rounded-md hover:muted flex items-center gap-3 justify-center"
             >
               <img
                 src="/Google__G__logo.svg.png"
                 className="w-5 h-5"
               />
               Google
-            </button>
+            </Button>
           </div>
 
-          <p className="text-center py-4 text-gray-500">
+          <p className="text-center py-4 text-muted-foreground">
             or using email and password
           </p>
 

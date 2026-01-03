@@ -68,7 +68,7 @@ export const EditContactDialog = ({
             toast.success("Customer updated successfully");
             setTimeout(() => {
                 navigate(0);
-            }, 2000);
+            }, 1000);
 
             onClose(); // ✅ close only on success
         } catch (err) {
@@ -81,7 +81,7 @@ export const EditContactDialog = ({
 
     return (
         <Dialog open={open} onOpenChange={onClose}>
-            <DialogContent className="sm:max-w-[500px] bg-white p-0 gap-0">
+            <DialogContent className="sm:max-w-[500px]  p-0 gap-0">
                 <DialogHeader className="border-b px-4 py-3">
                     <DialogTitle className="text-sm font-semibold">
                         Edit contact information
@@ -142,7 +142,7 @@ export const EditContactDialog = ({
                                 handleCheckboxChange("emailMarketing", !!v)
                             }
                         />
-                        <span className="text-sm text-gray-700">
+                        <span className="text-sm ">
                             Customer agreed to receive marketing emails
                         </span>
                     </div>
@@ -154,7 +154,7 @@ export const EditContactDialog = ({
                                 handleCheckboxChange("smsMarketing", !!v)
                             }
                         />
-                        <span className="text-sm text-gray-700">
+                        <span className="text-sm ">
                             Customer agreed to receive SMS marketing
                         </span>
                     </div>

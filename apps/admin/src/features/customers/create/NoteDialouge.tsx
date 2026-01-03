@@ -38,13 +38,13 @@ export const NoteDialouge = ({ note, setNote }: NoteDialogueProps) => {
                 <Button
                     variant="outline"
                     size="icon-sm"
-                    className="bg-transparent border-none shadow-none"
+                    className=""
                 >
-                    <Pencil className="text-gray-600" />
+                    <Pencil className="" />
                 </Button>
             </DialogTrigger>
 
-            <DialogContent className="sm:max-w-[425px] md:max-w-[500px] bg-white p-0 gap-0 overflow-hidden">
+            <DialogContent className="sm:max-w-[425px] md:max-w-[500px] p-0 gap-0 overflow-hidden">
                 <DialogHeader className="border-b px-3 py-3">
                     <DialogTitle>
                         <p className="text-sm font-semibold">Add Note</p>

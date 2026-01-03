@@ -65,7 +65,7 @@ export const EditAddressDialog = ({
             toast.success("Customer updated successfully");
             setTimeout(() => {
                 navigate(0);
-            }, 2000);
+            }, 1000);
 
             onClose(); // ✅ close only on success
         } catch (err) {
@@ -78,7 +78,7 @@ export const EditAddressDialog = ({
 
     return (
         <Dialog open={open} onOpenChange={onClose} >
-            <DialogContent className="sm:max-w-[500px] bg-white p-0 gap-0" >
+            <DialogContent className="sm:max-w-[500px] p-0 gap-0" >
                 <DialogHeader className="border-b px-4 py-3" >
                     <DialogTitle className="text-sm font-semibold" >
                         Edit contact information
@@ -88,7 +88,7 @@ export const EditAddressDialog = ({
                 < div className="p-4" >
 
                     <Field className="">
-                        <FieldLabel className="text-gray-700 text-sm">
+                        <FieldLabel className="text-sm">
                             Address
                         </FieldLabel>
                         <FieldContent>
@@ -102,7 +102,7 @@ export const EditAddressDialog = ({
                     </Field>
 
                     <Field className="mt-4">
-                        <FieldLabel className="text-gray-700 text-sm">
+                        <FieldLabel className=" text-sm">
                             City
                         </FieldLabel>
                         <FieldContent>
@@ -116,7 +116,7 @@ export const EditAddressDialog = ({
                     </Field>
 
                     <Field className="mt-4">
-                        <FieldLabel className="text-gray-700 text-sm">
+                        <FieldLabel className=" text-sm">
                             State
                         </FieldLabel>
                         <FieldContent>
@@ -130,7 +130,7 @@ export const EditAddressDialog = ({
                     </Field>
 
                     <Field className="mt-4">
-                        <FieldLabel className="text-gray-700 text-sm">
+                        <FieldLabel className=" text-sm">
                             Zip Code
                         </FieldLabel>
                         <FieldContent>

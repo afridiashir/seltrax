@@ -53,7 +53,7 @@ export default function CustomerDetail() {
         <div className="px-4 md:px-64">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <Link to="/customers"><User className="w-10 h-10 hover:bg-gray-200 cursor-pointer rounded-md p-2" /> </Link>{"> "}
+                    <Link to="/customers"><User className="w-10 h-10 hover:bg-muted cursor-pointer rounded-md p-2" /> </Link>{"> "}
                     <h2 className="font-medium">{customer?.firstName} {customer?.lastName}</h2>
                 </div>
                 <div className="flex items-center gap-2">
@@ -66,19 +66,19 @@ export default function CustomerDetail() {
                     <CardContent className="p-0 flex gap-2">
                         <div className="border-r w-1/3 p-2">
 
-                            <div className="flex flex-col gap-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md" >
+                            <div className="flex flex-col gap-2 p-2 hover:bg-muted cursor-pointer rounded-md" >
                                 <p className="font-medium text-sm underline decoration-dotted">Amount Spent</p>
                                 <p>Rs 0.00</p>
                             </div>
                         </div>
                         <div className="border-r w-1/3 p-2">
-                            <div className="flex flex-col gap-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md" >
+                            <div className="flex flex-col gap-2 p-2 hover:bg-muted cursor-pointer rounded-md" >
                                 <p className="font-medium text-sm underline decoration-dotted">Total Orders</p>
                                 <p>0</p>
                             </div>
                         </div>
                         <div className="border-r w-1/3 p-2">
-                            <div className="flex flex-col gap-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md" >
+                            <div className="flex flex-col gap-2 p-2 hover:bg-muted cursor-pointer rounded-md" >
                                 <p className="font-medium text-sm underline decoration-dotted">Customer Since</p>
                                 <p>{timeAgo(customer?.createdAt)}</p>
                             </div>
@@ -92,7 +92,7 @@ export default function CustomerDetail() {
                 <div className="w-2/3">
                     <Card className="mt-4 p-0 gap-0 ">
                         <CardHeader className="p-0  gap-0">
-                            <CardTitle className="font-medium text-black border-b p-4 m-0 text-sm">
+                            <CardTitle className="font-medium border-b p-4 m-0 text-sm">
                                 Last Order Placed
                             </CardTitle>
                         </CardHeader>
@@ -110,27 +110,27 @@ export default function CustomerDetail() {
                 <div className="w-1/3">
                     <Card className="mt-4 p-0 gap-0 ">
                         <CardHeader className="p-0  gap-0">
-                            <CardTitle className="font-medium text-black border-b p-4 m-0 text-sm">
+                            <CardTitle className="font-medium  border-b p-4 m-0 text-sm">
                                 Customer
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="px-4 pb-4">
                             <div className="gap-4 mt-4">
                                 <p className="text-sm text-semibold">Contact Information</p>
-                                <p className="text-sm mt-2">{customer?.email}</p>
-                                <p className="text-sm mt-1">{customer?.phone}</p>
+                                <p className="text-sm mt-2 ml-2">{customer?.email}</p>
+                                <p className="text-sm mt-1 ml-2">{customer?.phone}</p>
 
                                 <p className="text-sm text-semibold mt-4">Default Address</p>
-                                <p className="text-sm mt-2">{customer?.address}</p>
-                                <p className="text-sm mt-1">{customer?.city}</p>
-                                <p className="text-sm mt-1">{customer?.state}</p>
-                                <p className="text-sm mt-1">{customer?.zipCode}</p>
-                                <p className="text-sm mt-1">{customer?.country}</p>
+                                <p className="text-sm mt-2 ml-2">{customer?.address}</p>
+                                <p className="text-sm mt-1 ml-2">{customer?.city}</p>
+                                <p className="text-sm mt-1 ml-2">{customer?.state}</p>
+                                <p className="text-sm mt-1 ml-2">{customer?.zipCode}</p>
+                                <p className="text-sm mt-1 ml-2">{customer?.country}</p>
 
 
                                 <p className="text-sm text-semibold mt-4">Marketing Information</p>
-                                <p className="text-sm mt-2 flex items-center gap-2"><Checkbox checked={customer?.emailMarketing} disabled />Email {customer?.emailMarketing ? "Subscribed" : "not subscribed"}</p>
-                                <p className="text-sm mt-1 flex items-center gap-2"><Checkbox checked={customer?.smsMarketing} disabled />SMS {customer?.smsMarketing ? "Subscribed" : "not subscribed"}</p>
+                                <p className="text-sm mt-2 ml-2 flex items-center gap-2"><Checkbox checked={customer?.emailMarketing} disabled />Email {customer?.emailMarketing ? "Subscribed" : "not subscribed"}</p>
+                                <p className="text-sm mt-1 ml-2 flex items-center gap-2"><Checkbox checked={customer?.smsMarketing} disabled />SMS {customer?.smsMarketing ? "Subscribed" : "not subscribed"}</p>
 
                             </div>
 
@@ -139,7 +139,7 @@ export default function CustomerDetail() {
 
                     <Card className="mt-4 p-0 gap-0 mb-16">
                         <CardHeader className="p-0  gap-0">
-                            <CardTitle className="font-medium text-black border-b p-4 py-2 m-0 text-sm flex items-center justify-between">
+                            <CardTitle className="font-medium  border-b p-4 py-2 m-0 text-sm flex items-center justify-between">
                                 Notes
                                 {customer?.id && (
                                     <NoteEditDialouge id={customer.id} note={customer.note || ""} setNote={setNote} />
@@ -148,9 +148,9 @@ export default function CustomerDetail() {
                         </CardHeader>
                         <CardContent className="px-4 py-4">
                             {note ? (
-                                <p className="text-sm text-black">{note}</p>
+                                <p className="text-sm">{note}</p>
                             ) : (
-                                <p className="text-sm text-gray-500">Notes are private and won't be shared with the customer.</p>
+                                <p className="text-sm text-muted-foreground">Notes are private and won't be shared with the customer.</p>
                             )}
                         </CardContent>
                     </Card>

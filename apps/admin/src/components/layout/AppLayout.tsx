@@ -3,25 +3,23 @@ import Header from "./Header";
 import { Outlet } from "react-router-dom";
 import { SidebarProvider } from "../ui/sidebar";
 import { Toaster } from "../ui/sonner";
-
 const AppLayout = () => {
   return (
     <SidebarProvider>
-      <div className="flex w-full h-screen bg-background text-foreground">
-        <AppSidebar />
-        <div className="flex-1 flex flex-col">
-          <Header />
-          <main className="py-6 px-8 overflow-auto bg-background">
+      <div className="w-full  min-h-screen text-foreground">
+        <Header />
+
+        <div className="flex overflow-hidden bg-background ">
+          <AppSidebar />
+
+          <main className="flex-1 py-6 px-4 md:px-8 overflow-auto min-h-[calc(100vh-55px)] max-h-[calc(100vh-55px)]">
             <Outlet />
           </main>
 
           <Toaster position="top-right" />
         </div>
       </div>
-
     </SidebarProvider>
-
   );
 };
-
 export default AppLayout;

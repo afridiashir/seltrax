@@ -8,10 +8,12 @@ import RootRedirect from "@/app/RootRedirect";
 import NotFound from "./NotFound";
 import storeRoutes from "@/features/store/store.routes";
 import customerRoutes from "@/features/customers/customers.routes";
+import settingsRoutes from "@/features/settings/settings.routes";
 
 export const router = createBrowserRouter([
   ...authRoutes,
   ...storeRoutes,
+  ...settingsRoutes,
   {
     path: "/",
     element: <AppLayout />,

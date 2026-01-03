@@ -42,7 +42,7 @@ export const CustomerUpdateAction = (customerData: any) => {
             {/* DROPDOWN */}
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="outline" className="bg-white">
+                    <Button variant="outline" className="">
                         More actions <ChevronDown className="w-4 h-4 ml-2" />
                     </Button>
                 </DropdownMenuTrigger>
